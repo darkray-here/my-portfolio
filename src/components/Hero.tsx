@@ -18,18 +18,17 @@ export function Hero() {
           </h1>
 
           <p className="hero__supporting">
-            I build games and think about the systems behind them — gameplay
-            programming, mechanics, and the design decisions that make a game
-            feel right to play. Working in Unity and C#, learning C++ to go
-            deeper.
+            I build in Unity and C#, working across gameplay programming,
+            mechanics, and level design. I&apos;m especially interested in the
+            decisions that connect a game&apos;s design to its implementation.
           </p>
 
           <div className="hero__actions">
             <ScrollLink targetId="work" className="btn btn--primary">
-              View My Work
+              View selected work
             </ScrollLink>
             <ScrollLink targetId="contact" className="btn btn--secondary">
-              Get In Touch
+              Contact me
             </ScrollLink>
           </div>
 
@@ -38,9 +37,9 @@ export function Hero() {
             <li aria-hidden="true">·</li>
             <li>C#</li>
             <li aria-hidden="true">·</li>
-            <li>C++</li>
+            <li>Gameplay systems</li>
             <li aria-hidden="true">·</li>
-            <li>Game Design</li>
+            <li>Level design</li>
           </ul>
         </div>
 

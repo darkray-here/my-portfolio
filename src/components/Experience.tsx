@@ -9,7 +9,7 @@ export function Experience() {
           id="experience"
           index="03"
           title="Experience & Education"
-          subtitle="Where I'm learning and working on games."
+          subtitle="Current study and current experience."
         />
 
         <div className="timeline">
@@ -34,11 +34,7 @@ export function Experience() {
                         <li key={point}>{point}</li>
                       ))}
                     </ul>
-                  ) : (
-                    <p className="entry__pending">
-                      Details to be added.
-                    </p>
-                  )}
+                  ) : null}
                 </li>
               ))}
             </ul>

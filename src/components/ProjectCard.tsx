@@ -4,19 +4,33 @@ import { ProjectMedia } from "./ProjectMedia";
 type ProjectCardProps = {
   project: Project;
   index: string;
+  onOpen: (project: Project) => void;
 };
 
 /**
  * Data-driven project card. Renders a larger "featured" layout when
  * `project.featured` is set, otherwise a standard card. All content
  * comes from the project data — no hardcoded project info here.
+ *
+ * Clicking the card opens the project detail modal via `onOpen`.
  */
-export function ProjectCard({ project, index }: ProjectCardProps) {
-  const primaryLink = project.links?.[0];
+export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
   const cardClass = `project ${project.featured ? "project--featured" : ""}`;
 
-  const inner = (
-    <>
+  return (
+    <article
+      className={cardClass}
+      aria-label={project.title}
+      tabIndex={0}
+      role="button"
+      onClick={() => onOpen(project)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen(project);
+        }
+      }}
+    >
       <ProjectMedia project={project} index={index} />
 
       <div className="project__body">
@@ -24,6 +38,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <span className="project__index">{index}</span>
           <h3 className="project__title">{project.title}</h3>
         </div>
+
+        {project.status ? (
+          <p className="project__status-text">{project.status}</p>
+        ) : null}
 
         {project.tagline ? (
           <p className="project__tagline">{project.tagline}</p>
@@ -41,33 +59,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         <div className="project__foot">
           <span className="project__category">{project.category}</span>
-          {primaryLink ? (
-            <span className="project__link">
-              {primaryLink.label} →
-            </span>
-          ) : (
-            <span className="project__link project__link--soon">
-              Case study soon
-            </span>
-          )}
+           <span className="project__link">Read breakdown →</span>
         </div>
       </div>
-    </>
-  );
-
-  return primaryLink ? (
-    <a
-      className={cardClass}
-      href={primaryLink.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${project.title} — ${primaryLink.label}`}
-    >
-      {inner}
-    </a>
-  ) : (
-    <article className={cardClass} aria-label={project.title}>
-      {inner}
     </article>
   );
 }

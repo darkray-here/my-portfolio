@@ -8,8 +8,8 @@ export function Skills() {
         <SectionHeading
           id="skills"
           index="04"
-          title="Skills / Tools"
-          subtitle="What I use to build games — some as my main tools, some I'm still learning."
+          title="Skills"
+          subtitle="Tools and areas I have practised through the projects above."
         />
 
         <div className="skills">

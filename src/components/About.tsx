@@ -8,35 +8,34 @@ export function About() {
           id="about"
           index="02"
           title="About"
-          subtitle="A short intro to who I am and what I'm working toward."
+          subtitle="The kind of work I want to keep getting better at."
         />
 
         <div className="about">
           <div className="about__intro">
             <p className="about__lead">
               I&apos;m Mohammed Amaan Khan, a B.Tech Game Development student
-              who likes building games and understanding how their systems
-              work.
+              who builds games and thinks about the systems behind them.
             </p>
             <p>
-              I enjoy both sides of game development — programming the systems
-              that make a game run, and designing the mechanics that make it
-              feel right to play. Most of my work is in Unity and C#, and I&apos;m
-              also learning C++ to go deeper into how games are built at a
-              lower level.
+              My work spans both sides of game development: implementing the
+              systems that make a game run and shaping the levels and mechanics
+              that make it readable and enjoyable to play. I have shipped
+              mobile projects and built smaller Unity projects to practice
+              spawning, animation states, UI, and gameplay logic.
             </p>
             <p>
-              I&apos;m working toward becoming a Technical Game Designer — the
-              space where design decisions and technical implementation meet.
-              For now, I&apos;m building projects, studying how systems and
-              mechanics come together, and learning by doing.
+              I&apos;m working toward the design-and-programming intersection:
+              gameplay systems, mechanics, and the level decisions around them.
+              That is the direction I want to grow into through more deliberate
+              prototyping and technical practice.
             </p>
           </div>
 
           <aside className="about__facts" aria-label="Quick facts">
             <div className="fact">
               <span className="fact__label">Focus</span>
-              <span className="fact__value">Gameplay programming &amp; systems design</span>
+              <span className="fact__value">Gameplay, systems &amp; level design</span>
             </div>
             <div className="fact">
               <span className="fact__label">Engine</span>
@@ -44,11 +43,11 @@ export function About() {
             </div>
             <div className="fact">
               <span className="fact__label">Languages</span>
-              <span className="fact__value">C#, C++, learning more</span>
+              <span className="fact__value">C#, learning C++</span>
             </div>
             <div className="fact">
-              <span className="fact__label">Goal</span>
-              <span className="fact__value">Technical Game Designer</span>
+              <span className="fact__label">Direction</span>
+              <span className="fact__value">Technical game design</span>
             </div>
           </aside>
         </div>

@@ -31,6 +31,7 @@ export function ProjectMedia({ project, index }: ProjectMediaProps) {
           <span className="project__placeholder-label">
             {project.title}
           </span>
+          <span className="project__placeholder-note">Gameplay media pending</span>
         </div>
       )}
 

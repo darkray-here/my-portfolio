@@ -12,7 +12,7 @@ export function Contact() {
           id="contact"
           index="05"
           title="Contact"
-          subtitle="The best way to reach me about projects, opportunities, or collaboration."
+          subtitle="For game development opportunities and project conversations."
         />
 
         <div className="contact">
@@ -21,11 +21,11 @@ export function Contact() {
               I&apos;m open to game development internships, gameplay
               programming roles, and collaboration on game projects.
             </p>
-            <p className="contact__line contact__line--muted">
-              {available.length > 0
-                ? "Reach me through any of the links below."
-                : "Contact links will be added soon."}
-            </p>
+            {available.length > 0 ? (
+              <p className="contact__line contact__line--muted">
+                Reach me through any of the links below.
+              </p>
+            ) : null}
           </div>
 
           {available.length > 0 ? (
@@ -45,14 +45,7 @@ export function Contact() {
                 </li>
               ))}
             </ul>
-          ) : (
-            <div className="contact__pending" aria-hidden="true">
-              <span className="contact__pending-label">GitHub</span>
-              <span className="contact__pending-label">LinkedIn</span>
-              <span className="contact__pending-label">itch.io</span>
-              <span className="contact__pending-label">Email</span>
-            </div>
-          )}
+          ) : null}
         </div>
       </div>
     </section>

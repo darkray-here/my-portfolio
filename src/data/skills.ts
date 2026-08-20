@@ -15,8 +15,8 @@ export type SkillGroup = {
 };
 
 /**
- * Only technologies that are genuinely part of the known skill set.
- * Nothing is added just to look complete.
+ * Skills are grounded in the actual project work — only technologies
+ * and disciplines with evidence from the portfolio are listed.
  */
 export const skillGroups: SkillGroup[] = [
   {
@@ -25,33 +25,36 @@ export const skillGroups: SkillGroup[] = [
       { name: "Unity", level: "Primary" },
       { name: "C#", level: "Primary" },
       { name: "Gameplay Programming", level: "Primary" },
-      { name: "Game Systems", level: "Primary" },
+      { name: "UI Implementation", level: "Primary" },
     ],
   },
   {
     title: "Game Design",
     skills: [
-      { name: "Game Mechanics" },
-      { name: "Systems Design" },
-      { name: "Level Design", level: "Learning" },
-      { name: "Prototyping", level: "Primary" },
+      { name: "Level Design", level: "Primary" },
+      { name: "Mechanic Design", level: "Primary" },
+      { name: "Environmental Design", level: "Primary" },
+      { name: "Gameplay Iteration", level: "Primary" },
     ],
   },
   {
-    title: "Programming",
+    title: "Gameplay / Systems",
     skills: [
+      { name: "Spawning Systems", level: "Primary" },
+      { name: "Animation State Systems", level: "Primary" },
+      { name: "Collision / Physics", level: "Primary" },
+      { name: "Gameplay Logic", level: "Primary" },
+    ],
+  },
+  {
+    title: "Tools / Technology",
+    skills: [
+      { name: "Unity Terrain Tools", level: "Primary" },
+      { name: "Cinemachine", level: "Familiar" },
+      { name: "Mixamo", level: "Familiar" },
+      { name: "Aseprite", level: "Learning" },
+      { name: "Git & GitHub", level: "Familiar" },
       { name: "C++", level: "Learning" },
-      { name: "Java", level: "Familiar" },
-      { name: "TypeScript", level: "Familiar" },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "Git" },
-      { name: "GitHub" },
-      { name: "VS Code" },
-      { name: "IntelliJ IDEA" },
     ],
   },
 ];

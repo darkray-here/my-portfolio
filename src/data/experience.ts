@@ -33,7 +33,6 @@ export const experience: ExperienceEntry[] = [
     role: "Unity Developer Intern",
     organization: "datamonk.dev",
     current: true,
-    // Responsibilities and dates to be added when confirmed.
   },
 ];
 
