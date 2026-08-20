@@ -1,12 +1,16 @@
 :root {
-  /* Color tokens */
-  --color-bg: #0b0d10;
-  --color-surface: #15181d;
-  --color-elevated: #1e222a;
-  --color-text: #f2f3f5;
-  --color-text-secondary: #9aa0a8;
-  --color-accent: #e8b14a;
+  /* Color tokens — violet technical */
+  --color-bg: #09090d;
+  --color-surface: #111118;
+  --color-elevated: #181820;
+  --color-text: #f2f0f5;
+  --color-text-secondary: #a8a4b0;
+  --color-text-muted: #72707b;
+  --color-accent: #8b5cf6;
+  --color-accent-light: #a78bfa;
+  --color-accent-deep: #6d28d9;
   --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
 
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -74,7 +78,7 @@ svg {
 
 ::selection {
   background: var(--color-accent);
-  color: #0b0d10;
+  color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {

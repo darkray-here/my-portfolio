@@ -20,14 +20,14 @@
   right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(11, 13, 16, 0.2);
+  background: rgba(9, 9, 13, 0.2);
   border-bottom: 1px solid transparent;
   transition: background var(--transition-base),
     border-color var(--transition-base);
 }
 
 .nav--scrolled {
-  background: rgba(11, 13, 16, 0.85);
+  background: rgba(9, 9, 13, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--color-border);
@@ -46,8 +46,9 @@
 
 .nav__brand {
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--color-text);
+  font-size: 0.95rem;
 }
 
 .nav__links {
@@ -103,7 +104,7 @@
 .nav__mobile {
   display: none;
   flex-direction: column;
-  background: rgba(11, 13, 16, 0.97);
+  background: rgba(9, 9, 13, 0.97);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -143,7 +144,8 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: var(--nav-height);
+  padding-top: calc(var(--nav-height) + 1rem);
+  padding-bottom: 3rem;
   overflow: hidden;
 }
 
@@ -152,6 +154,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .hero__grid {
@@ -169,64 +172,32 @@
     );
   background-size: 48px 48px;
   mask-image: radial-gradient(
-    ellipse 80% 70% at 60% 40%,
-    #000 30%,
+    ellipse 80% 70% at 65% 40%,
+    #000 25%,
     transparent 100%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 80% 70% at 60% 40%,
-    #000 30%,
+    ellipse 80% 70% at 65% 40%,
+    #000 25%,
     transparent 100%
   );
 }
 
 .hero__glow {
   position: absolute;
-  top: -10%;
+  top: -15%;
   right: -10%;
   width: 60vw;
   height: 60vw;
-  max-width: 700px;
-  max-height: 700px;
+  max-width: 720px;
+  max-height: 720px;
   background: radial-gradient(
     circle,
-    rgba(232, 177, 74, 0.12) 0%,
-    rgba(232, 177, 74, 0.04) 35%,
+    rgba(139, 92, 246, 0.16) 0%,
+    rgba(109, 40, 217, 0.05) 40%,
     transparent 70%
   );
-  filter: blur(20px);
-}
-
-.hero__crosshair {
-  position: absolute;
-  top: 30%;
-  right: 18%;
-  width: 120px;
-  height: 120px;
-  opacity: 0.25;
-}
-
-.hero__crosshair::before,
-.hero__crosshair::after {
-  content: "";
-  position: absolute;
-  background: var(--color-accent);
-}
-
-.hero__crosshair::before {
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  transform: translateY(-50%);
-}
-
-.hero__crosshair::after {
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  transform: translateX(-50%);
+  filter: blur(30px);
 }
 
 .hero__inner {
@@ -246,25 +217,33 @@
   max-width: 38rem;
 }
 
+.hero__name {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+}
+
 .hero__eyebrow {
   display: inline-block;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.4rem;
   padding: 0.3rem 0.7rem;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent);
-  border: 1px solid rgba(232, 177, 74, 0.35);
+  color: var(--color-accent-light);
+  border: 1px solid rgba(139, 92, 246, 0.4);
   border-radius: 4px;
-  background: rgba(232, 177, 74, 0.06);
+  background: rgba(139, 92, 246, 0.08);
 }
 
 .hero__title {
   margin: 0 0 1.5rem;
-  font-size: clamp(2.25rem, 1.4rem + 4vw, 4.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.4rem, 1.4rem + 4vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
   font-weight: 700;
   color: var(--color-text);
 }
@@ -280,15 +259,25 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .hero__stack {
+  list-style: none;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.hero__stack li {
+  display: inline-block;
 }
 
 /* Buttons */
@@ -303,132 +292,692 @@
   border: 1px solid transparent;
   transition: background var(--transition-fast),
     border-color var(--transition-fast), color var(--transition-fast),
-    transform var(--transition-fast);
+    transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .btn--primary {
   background: var(--color-accent);
-  color: #0b0d10;
+  color: #fff;
 }
 
 .btn--primary:hover,
 .btn--primary:focus-visible {
-  background: #f0c060;
+  background: var(--color-accent-light);
   transform: translateY(-1px);
+  box-shadow: 0 8px 24px -10px rgba(139, 92, 246, 0.6);
 }
 
 .btn--secondary {
   background: transparent;
   color: var(--color-text);
-  border-color: var(--color-border);
+  border-color: var(--color-border-strong);
 }
 
 .btn--secondary:hover,
 .btn--secondary:focus-visible {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
   background: var(--color-surface);
 }
 
-/* Hero visual panel */
+/* ----- Hero combat-loop visual ----- */
+
 .hero__visual {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.hero__panel {
+.loop {
   width: 100%;
-  max-width: 340px;
-  background: var(--color-surface);
+  max-width: 420px;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 32, 0.6) 0%,
+    rgba(17, 17, 24, 0.4) 100%
+  );
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.6);
 }
 
-.hero__panel-header {
+.loop__frame {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 0.9rem;
+  justify-content: space-between;
+  padding: 0.6rem 0.9rem;
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-elevated);
+  background: rgba(24, 24, 32, 0.5);
 }
 
-.hero__panel-dot {
-  width: 8px;
-  height: 8px;
+.loop__tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.loop__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+}
+
+.loop__status-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--color-accent);
-  box-shadow: 0 0 8px rgba(232, 177, 74, 0.6);
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.7);
+  animation: loopPulse 2.4s ease-in-out infinite;
 }
 
-.hero__panel-title {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-text-secondary);
+/* The stage — a tall arena where the combat reads as gameplay.
+   Taller than before (4/3) so the entities have room to act. */
+.loop__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 55%,
+    rgba(139, 92, 246, 0.06) 0%,
+    transparent 75%
+  );
+  overflow: hidden;
 }
 
-.hero__panel-body {
-  padding: 1.2rem 0.9rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+/* faint arena floor grid — denser and lower for a ground feel */
+.loop__arena {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 20px 20px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 35%,
+    #000 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 35%,
+    #000 100%
+  );
 }
 
-.hero__line {
-  height: 8px;
-  border-radius: 2px;
+/* ground line — the floor the characters stand on */
+.loop__ground {
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  right: 0;
+  height: 1px;
   background: linear-gradient(
     to right,
-    var(--color-elevated) 0%,
-    var(--color-elevated) 70%,
+    transparent 0%,
+    rgba(167, 139, 250, 0.25) 15%,
+    rgba(167, 139, 250, 0.25) 85%,
     transparent 100%
   );
 }
 
-.hero__line:nth-child(2) {
-  width: 85%;
-}
-.hero__line:nth-child(3) {
-  width: 60%;
-}
-.hero__line:nth-child(4) {
-  width: 75%;
-}
-.hero__line:nth-child(5) {
-  width: 45%;
+/* enemy HP bar — floats above the enemy, drains on hit, resets on respawn */
+.loop__enemy-hpbar {
+  position: absolute;
+  top: 16%;
+  left: 64%;
+  width: 28%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  overflow: hidden;
 }
 
-.hero__panel-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 0.9rem;
-  border-top: 1px solid var(--color-border);
+.loop__enemy-hpbar-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--color-accent-light);
+  transform-origin: left center;
+  animation: loopEnemyHpFill 6s ease-in-out infinite;
+}
+
+@keyframes loopEnemyHpFill {
+  0%, 44% {
+    width: 100%;
+    opacity: 1;
+  }
+  /* drain on hit */
+  50% {
+    width: 30%;
+    opacity: 1;
+  }
+  /* empty after defeat */
+  60%, 76% {
+    width: 0%;
+    opacity: 0.4;
+  }
+  /* refill on respawn */
+  82% {
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Player — a rounded character token with an "eye", on the ground.
+   Larger and more present than before. Anchored at left: 22%. */
+.loop__player {
+  position: absolute;
+  bottom: 22%;
+  left: 22%;
+  width: 26px;
+  height: 26px;
+  margin-bottom: -2px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent-light) 0%,
+    var(--color-accent) 100%
+  );
+  box-shadow: 0 4px 12px -2px rgba(139, 92, 246, 0.5);
+  transform: translateX(-50%);
+  animation: loopPlayer 6s ease-in-out infinite;
+}
+
+/* player "eye" — a small dark dot that gives it character */
+.loop__player::after {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: 28%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #15151c;
+}
+
+/* faint trail behind the player while approaching */
+.loop__player-trail {
+  position: absolute;
+  bottom: 22%;
+  left: 22%;
+  width: 0;
+  height: 2px;
+  margin-bottom: 4px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(167, 139, 250, 0.4)
+  );
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: loopPlayerTrail 6s ease-in-out infinite;
+}
+
+@keyframes loopPlayer {
+  0% {
+    left: 22%;
+    transform: translateX(-50%) translateY(0);
+  }
+  /* idle bob */
+  8% {
+    left: 22%;
+    transform: translateX(-50%) translateY(-2px);
+  }
+  12% {
+    left: 22%;
+    transform: translateX(-50%) translateY(0);
+  }
+  /* approach */
+  40% {
+    left: 48%;
+    transform: translateX(-50%) translateY(0);
+  }
+  /* lunge forward to strike */
+  46% {
+    left: 56%;
+    transform: translateX(-50%) translateY(-6px) scaleX(1.15);
+  }
+  /* recoil */
+  52% {
+    left: 46%;
+    transform: translateX(-50%) translateY(0) scaleX(1);
+  }
+  /* return to start */
+  80% {
+    left: 22%;
+    transform: translateX(-50%) translateY(0);
+  }
+  /* idle bob again */
+  88% {
+    left: 22%;
+    transform: translateX(-50%) translateY(-2px);
+  }
+  100% {
+    left: 22%;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes loopPlayerTrail {
+  0%, 10% {
+    width: 0;
+    opacity: 0;
+  }
+  40% {
+    width: 26%;
+    opacity: 0.5;
+  }
+  46% {
+    width: 34%;
+    opacity: 0.7;
+  }
+  52% {
+    width: 24%;
+    opacity: 0.3;
+  }
+  80% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+/* Enemy — a diamond/shard shape on the right.
+   Targeted, hit (flash + flinch), defeated (shrink + fade), respawns. */
+.loop__enemy {
+  position: absolute;
+  bottom: 22%;
+  left: 68%;
+  width: 24px;
+  height: 24px;
+  margin-bottom: -2px;
+  background: var(--color-text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transform: translateX(-50%) rotate(45deg);
+  animation: loopEnemy 6s ease-in-out infinite;
+}
+
+@keyframes loopEnemy {
+  0%, 10% {
+    opacity: 0.9;
+    transform: translateX(-50%) rotate(45deg) scale(1);
+    background: var(--color-text-secondary);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+  /* targeted — subtle alert tint */
+  30%, 44% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(45deg) scale(1);
+    border-color: var(--color-accent-light);
+    background: rgba(167, 139, 250, 0.25);
+  }
+  /* hit — flash violet + flinch */
+  48% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(45deg) scale(0.8) translateX(4px);
+    background: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+  }
+  /* defeated — shrink and fade */
+  58%, 60% {
+    opacity: 0;
+    transform: translateX(-50%) rotate(45deg) scale(0.3);
+  }
+  /* respawn — grow back */
+  78% {
+    opacity: 0;
+    transform: translateX(-50%) rotate(45deg) scale(1);
+  }
+  82% {
+    opacity: 0.9;
+    transform: translateX(-50%) rotate(45deg) scale(1);
+    background: var(--color-text-secondary);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateX(-50%) rotate(45deg) scale(1);
+    background: var(--color-text-secondary);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+/* targeting reticle around the enemy */
+.loop__enemy-target {
+  position: absolute;
+  bottom: 22%;
+  left: 68%;
+  width: 34px;
+  height: 34px;
+  margin-bottom: -7px;
+  border: 1px solid var(--color-accent-light);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: loopEnemyTarget 6s ease-in-out infinite;
+}
+
+@keyframes loopEnemyTarget {
+  0%, 14% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.5);
+  }
+  /* lock on during approach */
+  24% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+  44% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  /* vanish on hit */
+  48% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.5);
+  }
+}
+
+/* Slash line — a quick diagonal flash from the player toward the enemy on hit.
+   Originates at the player's strike position (left ~50%) and grows
+   rightward toward the enemy, instead of expanding from the center. */
+.loop__strike {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--color-accent-light),
+    rgba(167, 139, 250, 0.2)
+  );
+  transform-origin: left center;
+  transform: rotate(-12deg);
+  opacity: 0;
+  animation: loopStrike 6s ease-out infinite;
+}
+
+@keyframes loopStrike {
+  0%, 44% {
+    width: 0;
+    opacity: 0;
+  }
+  46% {
+    width: 22%;
+    opacity: 1;
+  }
+  50% {
+    width: 22%;
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+/* Impact ring — expands from the enemy on hit */
+.loop__impact {
+  position: absolute;
+  bottom: 22%;
+  left: 68%;
+  width: 24px;
+  height: 24px;
+  margin-bottom: -2px;
+  border: 1.5px solid var(--color-accent-light);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: loopImpact 6s ease-out infinite;
+}
+
+@keyframes loopImpact {
+  0%, 46% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1);
+  }
+  48% {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(1);
+  }
+  58% {
+    opacity: 0;
+    transform: translateX(-50%) scale(3.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(3.2);
+  }
+}
+
+/* Damage number — floats up from the enemy on hit */
+.loop__damage {
+  position: absolute;
+  bottom: 40%;
+  left: 68%;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-accent-light);
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: loopDamage 6s ease-out infinite;
+}
+
+@keyframes loopDamage {
+  0%, 46% {
+    opacity: 0;
+    bottom: 40%;
+  }
+  48% {
+    opacity: 1;
+    bottom: 38%;
+  }
+  58% {
+    opacity: 0;
+    bottom: 26%;
+  }
+  100% {
+    opacity: 0;
+    bottom: 26%;
+  }
+}
+
+/* Phase label — centered over the arena, reflects the current phase */
+.loop__phase {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transform: translateX(-50%);
+  animation: loopPhase 6s steps(1, end) infinite;
+}
+
+@keyframes loopPhase {
+  0%, 14% {
+    color: var(--color-text-muted);
+  }
+  20%, 44% {
+    color: var(--color-accent-light);
+  }
+  48%, 58% {
+    color: var(--color-accent);
+  }
+  60%, 78% {
+    color: var(--color-text-muted);
+  }
+  82%, 100% {
+    color: var(--color-text-muted);
+  }
+}
+
+/* Slim debug readout — a single line strip, not a panel of boxes */
+.loop__readout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border-top: 1px solid var(--color-border);
+  background: rgba(24, 24, 32, 0.5);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  flex-wrap: wrap;
+}
+
+.loop__readout-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.loop__readout-key {
   letter-spacing: 0.1em;
-  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
-.hero__panel-status {
-  color: var(--color-accent);
+.loop__readout-val {
+  color: var(--color-text);
+  letter-spacing: 0.02em;
 }
 
+/* enemy state cycles: targeted → hit → defeated → respawn */
+.loop__enemy-state {
+  animation: loopEnemyState 6s steps(1, end) infinite;
+}
+
+@keyframes loopEnemyState {
+  0%, 14% {
+    color: var(--color-text);
+  }
+  20%, 44% {
+    color: var(--color-accent-light);
+  }
+  48%, 58% {
+    color: var(--color-accent);
+  }
+  60%, 78% {
+    color: var(--color-text-muted);
+  }
+  82%, 100% {
+    color: var(--color-text);
+  }
+}
+
+.loop__event-val {
+  animation: loopEventVal 6s steps(1, end) infinite;
+}
+
+@keyframes loopEventVal {
+  0%, 44% {
+    color: var(--color-text-muted);
+  }
+  48%, 58% {
+    color: var(--color-accent-light);
+  }
+  60%, 80% {
+    color: var(--color-text-muted);
+  }
+  82%, 100% {
+    color: var(--color-text-muted);
+  }
+}
+
+.loop__readout-sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-border-strong);
+}
+
+@keyframes loopPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Reduced motion: freeze the loop in a clean, readable static state. */
+@media (prefers-reduced-motion: reduce) {
+  .loop__player,
+  .loop__player-trail,
+  .loop__enemy,
+  .loop__enemy-target,
+  .loop__strike,
+  .loop__impact,
+  .loop__damage,
+  .loop__phase,
+  .loop__enemy-hpbar-fill,
+  .loop__status-dot,
+  .loop__enemy-state,
+  .loop__event-val {
+    animation: none !important;
+  }
+  .loop__player {
+    left: 48%;
+  }
+  .loop__enemy-target {
+    opacity: 0.7;
+  }
+  .loop__enemy-state {
+    color: var(--color-accent-light);
+  }
+}
+
+/* Desktop: full visual on the right, content on the left. */
 @media (max-width: 900px) {
   .hero__inner {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
+    align-items: stretch;
   }
+  /* Visual goes BELOW the content on mobile. */
   .hero__visual {
-    order: -1;
-    justify-content: flex-start;
+    order: 1;
+    justify-content: center;
   }
-  .hero__panel {
-    max-width: 100%;
-  }
-  .hero__crosshair {
-    display: none;
+  /* Compact the visual on mobile — smaller and visually secondary. */
+  .loop {
+    max-width: 340px;
   }
 }
 
@@ -440,18 +989,28 @@
   .btn {
     width: 100%;
   }
+  /* Further reduce the combat visual on small screens so it stays
+     secondary to the hero copy. */
+  .loop {
+    max-width: 280px;
+  }
+  .loop__stage {
+    aspect-ratio: 3 / 2;
+  }
+  .loop__readout {
+    font-size: 0.6rem;
+    gap: 0.4rem;
+    padding: 0.5rem 0.7rem;
+  }
 }
 
 /* ============================================================
-   Placeholder sections
+   Sections — shared
    ============================================================ */
 
 .section {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  padding-block: clamp(4rem, 2rem + 8vw, 8rem);
   border-top: 1px solid var(--color-border);
+  padding-block: clamp(4rem, 2rem + 8vw, 8rem);
 }
 
 .section__inner {
@@ -461,17 +1020,290 @@
   padding-inline: clamp(1rem, 0.5rem + 2vw, 2.5rem);
 }
 
-.section__title {
-  margin: 0 0 1rem;
-  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
-  letter-spacing: -0.01em;
-  color: var(--color-text);
+.section__head {
+  margin-bottom: clamp(2rem, 1rem + 3vw, 3.5rem);
+  max-width: 48rem;
 }
 
-.section__note {
+.section__index {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+}
+
+.section__subtitle {
   margin: 0;
-  max-width: 40rem;
+  font-size: clamp(1.1rem, 0.9rem + 0.6vw, 1.4rem);
+  line-height: 1.5;
   color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.section__placeholder {
+  min-height: 20vh;
+  display: flex;
+  align-items: flex-start;
+}
+
+.section__coming {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Selected Work — project cards
+   ============================================================ */
+
+.section--work {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(17, 17, 24, 0.4) 100%
+  );
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+  gap: clamp(1rem, 0.5rem + 2vw, 1.5rem);
+  align-items: start;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color var(--transition-base),
+    transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.project:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -20px rgba(139, 92, 246, 0.25);
+}
+
+/* When the card is a link, reset anchor defaults */
+a.project {
+  color: inherit;
+}
+
+a.project:hover {
+  text-decoration: none;
+}
+
+/* Featured card spans full width and shows a taller media area */
+.project--featured {
+  grid-column: 1 / -1;
+}
+
+.project--featured .project__media {
+  aspect-ratio: 21 / 9;
+}
+
+.project__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--color-elevated);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.project__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.9rem;
+}
+
+.project__placeholder-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(139, 92, 246, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(139, 92, 246, 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 24px 24px;
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    #000 20%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    #000 20%,
+    transparent 100%
+  );
+}
+
+.project__placeholder-mark {
+  position: relative;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--color-accent-light);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 4px;
+  background: rgba(9, 9, 13, 0.4);
+}
+
+.project__placeholder-label {
+  position: relative;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.project__status {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  background: rgba(9, 9, 13, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
+}
+
+.project__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.1rem, 0.8rem + 1vw, 1.6rem);
+}
+
+.project__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.project__index {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent-light);
+  letter-spacing: 0.1em;
+}
+
+.project__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.005em;
+}
+
+.project--featured .project__title {
+  font-size: clamp(1.4rem, 1rem + 1vw, 1.8rem);
+}
+
+.project__tagline {
+  margin: -0.4rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-light);
+}
+
+.project__desc {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  background: var(--color-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.project__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+.project__category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.project__link {
+  font-size: 0.85rem;
+  color: var(--color-accent-light);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.project__link--soon {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+a.project:focus-visible {
+  outline: 2px solid var(--color-accent-light);
+  outline-offset: 2px;
+}
+
+.section--work .section__coming {
+  margin-top: clamp(2rem, 1rem + 3vw, 3rem);
+  align-self: start;
 }
 
 /* ============================================================
@@ -497,6 +1329,372 @@
   color: var(--color-text-secondary);
 }
 
+.footer__brand-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer__brand {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.footer__role {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
 .footer__meta {
   font-family: var(--font-mono);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   About
+   ============================================================ */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(2rem, 1rem + 3vw, 4rem);
+  align-items: start;
+}
+
+.about__intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.about__intro p {
+  margin: 0 0 1rem;
+}
+
+.about__lead {
+  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.about__facts {
+  display: grid;
+  gap: 0.8rem;
+  padding: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.fact__label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.fact__value {
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Skills
+   ============================================================ */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: clamp(1rem, 0.5rem + 2vw, 1.5rem);
+}
+
+.skill-group {
+  padding: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.skill-group__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+}
+
+.skill-group__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill__name {
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.skill__level {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.skill__level--primary {
+  color: var(--color-accent-light);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.skill__level--learning {
+  color: var(--color-text-secondary);
+}
+
+.skill__level--familiar {
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   Experience + Education
+   ============================================================ */
+
+.timeline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timeline__heading {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+}
+
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.entry {
+  padding: clamp(1.2rem, 1rem + 1vw, 1.5rem);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.entry__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry__role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.entry__badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  padding: 0.18rem 0.5rem;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.entry__org {
+  display: block;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.entry__context {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.entry__points {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.entry__points li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.entry__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.entry__pending {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ============================================================
+   Contact
+   ============================================================ */
+
+.section--contact {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 1rem + 3vw, 4rem);
+  align-items: center;
+}
+
+.contact__lead {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact__line {
+  display: block;
+  margin: 0 0 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.contact__line:last-child {
+  margin-bottom: 0;
+}
+
+.contact__line--muted {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.contact__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  transition: border-color var(--transition-fast),
+    background var(--transition-fast), transform var(--transition-fast);
+}
+
+.contact__link:hover,
+.contact__link:focus-visible {
+  border-color: rgba(139, 92, 246, 0.35);
+  background: var(--color-elevated);
+  transform: translateY(-1px);
+}
+
+.contact__link-label {
+  font-weight: 500;
+}
+
+.contact__link-value {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent-light);
+}
+
+.contact__pending {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact__pending-label {
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
 }
