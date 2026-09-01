@@ -9,7 +9,7 @@ export function Experience() {
           id="experience"
           index="03"
           title="Experience & Education"
-          subtitle="Current study and current experience."
+          subtitle="Experience, education, and current focus."
         />
 
         <div className="timeline">

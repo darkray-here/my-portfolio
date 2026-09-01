@@ -12,14 +12,15 @@ export function Contact() {
           id="contact"
           index="05"
           title="Contact"
-          subtitle="For game development opportunities and project conversations."
+          subtitle="Open to internships, junior gameplay roles, and focused collaborations."
         />
 
         <div className="contact">
           <div className="contact__lead">
             <p className="contact__line">
-              I&apos;m open to game development internships, gameplay
-              programming roles, and collaboration on game projects.
+              I&apos;m open to game-development internships, junior
+              gameplay-programming roles, and focused collaborations on game
+              projects.
             </p>
             {available.length > 0 ? (
               <p className="contact__line contact__line--muted">

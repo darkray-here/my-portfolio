@@ -1,4 +1,25 @@
 import type { Project } from "../types/project";
+import monkeyJumpCover from "../assets/MonkeyJump/cover.png";
+import fullThrottleCover from "../assets/FullThrottle/cover.png";
+import projectMauveCover from "../assets/ProjectMauve/Cover.png";
+
+import monkeyJump1 from "../assets/MonkeyJump/gameplay-1.png";
+import monkeyJump2 from "../assets/MonkeyJump/gameplay-2.png";
+import monkeyJump3 from "../assets/MonkeyJump/gameplay-3.png";
+import monkeyJump4 from "../assets/MonkeyJump/gameplay-4.png";
+import monkeyJump5 from "../assets/MonkeyJump/gameplay-5.png";
+import monkeyJump6 from "../assets/MonkeyJump/gameplay-6.png";
+import monkeyJump7 from "../assets/MonkeyJump/gameplay-7.png";
+
+import fullThrottle1 from "../assets/FullThrottle/gameplay-1.png";
+import fullThrottle2 from "../assets/FullThrottle/gameplay-2.png";
+import fullThrottle3 from "../assets/FullThrottle/gameplay-3.png";
+import fullThrottle4 from "../assets/FullThrottle/gameplay-4.png";
+
+import projectMauve1 from "../assets/ProjectMauve/Screenshot-1.png";
+import projectMauve2 from "../assets/ProjectMauve/Screenshot-2.png";
+import projectMauve3 from "../assets/ProjectMauve/Screenshot-3.png";
+import projectMauve4 from "../assets/ProjectMauve/Screenshot-4.png";
 
 /**
  * Portfolio projects.
@@ -10,16 +31,27 @@ import type { Project } from "../types/project";
  * array. The UI picks it up automatically. Set `featured: true` on at
  * most one project to feature it in the large card slot.
  *
- * Image paths point at /public and are left unset until a real image
- * exists. The card renders an on-brand placeholder when no image is set.
+ * Image paths point at bundled assets. The card renders an on-brand
+ * placeholder when a project has no image yet.
  */
 export const projects: Project[] = [
   {
     id: "monkey-jump",
     title: "Monkey Jump!",
+    image: monkeyJumpCover,
+    imageAlt: "Monkey Jump! cover art",
+    gallery: [
+      { src: monkeyJump1, alt: "Monkey Jump! gameplay screenshot 1" },
+      { src: monkeyJump2, alt: "Monkey Jump! gameplay screenshot 2" },
+      { src: monkeyJump3, alt: "Monkey Jump! gameplay screenshot 3" },
+      { src: monkeyJump4, alt: "Monkey Jump! gameplay screenshot 4" },
+      { src: monkeyJump5, alt: "Monkey Jump! gameplay screenshot 5" },
+      { src: monkeyJump6, alt: "Monkey Jump! gameplay screenshot 6" },
+      { src: monkeyJump7, alt: "Monkey Jump! gameplay screenshot 7" },
+    ],
     shortDescription:
       "A 2D vertical platformer built around upward progression, environmental hazards, and the risk of falling back through earlier sections.",
-    tagline: "Published mobile game · vertical progression",
+    tagline: "Mobile release · vertical platforming",
     category: "Game Development",
     categories: ["Game Development", "Level Design", "Gameplay"],
     status: "Published",
@@ -67,12 +99,20 @@ export const projects: Project[] = [
   {
     id: "full-throttle",
     title: "Full Throttle",
+    image: fullThrottleCover,
+    imageAlt: "Full Throttle cover art",
+    gallery: [
+      { src: fullThrottle1, alt: "Full Throttle gameplay screenshot 1" },
+      { src: fullThrottle2, alt: "Full Throttle gameplay screenshot 2" },
+      { src: fullThrottle3, alt: "Full Throttle gameplay screenshot 3" },
+      { src: fullThrottle4, alt: "Full Throttle gameplay screenshot 4" },
+    ],
     shortDescription:
       "A first-person mobile runner where the player dodges traffic anywhere across the road instead of switching between fixed lanes.",
-    tagline: "Published mobile game · non-lane-based movement",
+    tagline: "Previously published · open-road runner",
     category: "Game Development",
-    categories: ["Game Development", "Level Design", "Endless Runner"],
-    status: "Published",
+    categories: ["Game Development", "Level Design", "Runner Systems"],
+    status: "Previously Published",
     detailLevel: "supporting",
     engine: "Unity",
     language: "C#",
@@ -104,8 +144,6 @@ export const projects: Project[] = [
     result:
       "Completed and previously published; the current store listing is unavailable after the original build was removed.",
     technologies: ["Unity", "C#", "Mobile"],
-    // Note: removed from the Play Store due to a vulnerable Unity Android
-    // SDK in the build; will be re-uploaded on a new build.
   },
   {
     id: "brick-breaker",
@@ -169,7 +207,7 @@ export const projects: Project[] = [
     title: "Terrain Creation & Character Controller",
     shortDescription:
       "A coursework scene combining Unity Terrain design, imported character animation, and a basic drivable car interaction.",
-    tagline: "Coursework · environment and character fundamentals",
+    tagline: "Coursework · environment and character setup",
     category: "Coursework",
     categories: ["Coursework", "Technical / Systems", "Level Design"],
     status: "Completed",
@@ -233,6 +271,14 @@ export const projects: Project[] = [
   {
     id: "project-mauve",
     title: "Project Mauve",
+    image: projectMauveCover,
+    imageAlt: "Project Mauve cover art",
+    gallery: [
+      { src: projectMauve1, alt: "Project Mauve screenshot 1" },
+      { src: projectMauve2, alt: "Project Mauve screenshot 2" },
+      { src: projectMauve3, alt: "Project Mauve screenshot 3" },
+      { src: projectMauve4, alt: "Project Mauve screenshot 4" },
+    ],
     shortDescription:
       "An incomplete 2D top-down puzzle concept built around room-to-room exploration, environmental interaction, and personalized narrative clues.",
     tagline: "Personal concept · incomplete",

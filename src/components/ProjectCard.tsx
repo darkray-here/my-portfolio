@@ -59,7 +59,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
 
         <div className="project__foot">
           <span className="project__category">{project.category}</span>
-           <span className="project__link">Read breakdown →</span>
+          <span className="project__link">View details →</span>
         </div>
       </div>
     </article>

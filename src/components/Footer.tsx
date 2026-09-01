@@ -4,7 +4,7 @@ export function Footer() {
       <div className="footer__inner">
         <div className="footer__brand-group">
           <span className="footer__brand">Mohammed Amaan Khan</span>
-          <span className="footer__role">Games, mechanics, and gameplay systems.</span>
+          <span className="footer__role">Gameplay systems · level design</span>
         </div>
         <span className="footer__meta">© {new Date().getFullYear()}</span>
       </div>

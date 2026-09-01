@@ -4,6 +4,7 @@
  */
 export type ProjectStatus =
   | "Published"
+  | "Previously Published"
   | "Completed"
   | "In Progress"
   | "Incomplete";
@@ -23,6 +24,15 @@ export type ProjectLink = {
   kind: "store" | "github" | "itch.io" | "external";
   label: string;
   url: string;
+};
+
+/**
+ * A single gallery image shown inside the project detail modal.
+ * `src` is a bundled image import; `alt` is required for accessibility.
+ */
+export type ProjectGalleryImage = {
+  src: string;
+  alt: string;
 };
 
 /**
@@ -84,6 +94,11 @@ export type Project = {
   image?: string;
   /** Alt text for the real image. Required when `image` is set. */
   imageAlt?: string;
+  /**
+   * Optional gallery of additional screenshots shown in the detail view.
+   * Each entry is a bundled image import plus alt text.
+   */
+  gallery?: ProjectGalleryImage[];
   links?: ProjectLink[];
   highlights?: ProjectHighlight[];
   /**

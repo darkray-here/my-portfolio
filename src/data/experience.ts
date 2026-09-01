@@ -42,7 +42,5 @@ export const education: EducationEntry[] = [
     degree: "B.Tech. (Game Development)",
     field: "Computer Engineering",
     specialization: "Specialization in Game Technology",
-    status: "Third-year student",
-    current: true,
   },
 ];

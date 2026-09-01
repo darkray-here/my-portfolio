@@ -9,7 +9,7 @@ export function Skills() {
           id="skills"
           index="04"
           title="Skills"
-          subtitle="Tools and areas I have practised through the projects above."
+          subtitle="Skills demonstrated across the projects above."
         />
 
         <div className="skills">

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import type { Project } from "../types/project";
+import { useEffect, useState } from "react";
+import type { Project, ProjectGalleryImage } from "../types/project";
 
 type ProjectDetailProps = {
   project: Project | null;
@@ -70,6 +70,10 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
           ) : null}
         </div>
 
+        {project.gallery && project.gallery.length > 0 ? (
+          <ProjectGallery gallery={project.gallery} />
+        ) : null}
+
         {project.description ? (
           <p className="detail__desc">{project.description}</p>
         ) : null}
@@ -94,14 +98,15 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
         project.detailLevel !== "concept" ? (
           <DetailSection title="Systems & mechanics" items={project.systems} />
         ) : null}
-        {project.detailLevel === "featured" ||
-        project.detailLevel === "supporting" ? (
+        {project.detailLevel === "featured" ? (
           <DetailSection
             title="Technical challenge"
             items={project.technicalChallenges}
           />
         ) : null}
-        <DetailSection title="What I learned" items={project.whatILearned} />
+        {project.detailLevel !== "concept" ? (
+          <DetailSection title="What I learned" items={project.whatILearned} />
+        ) : null}
 
         {project.result ? (
           <div className="detail__section detail__section--result">
@@ -159,6 +164,50 @@ function DetailSection({
           <li key={item}>{item}</li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function ProjectGallery({ gallery }: { gallery: ProjectGalleryImage[] }) {
+  const [index, setIndex] = useState(0);
+  const count = gallery.length;
+
+  const goPrev = () => setIndex((i) => (i - 1 + count) % count);
+  const goNext = () => setIndex((i) => (i + 1) % count);
+
+  return (
+    <div className="detail__gallery-section">
+      <div className="detail__gallery">
+        <button
+          type="button"
+          className="detail__gallery-nav detail__gallery-nav--prev"
+          aria-label="Previous image"
+          onClick={goPrev}
+        >
+          ‹
+        </button>
+
+        <div className="detail__gallery-stage">
+          <img
+            className="detail__gallery-image"
+            src={gallery[index].src}
+            alt={gallery[index].alt}
+            decoding="async"
+          />
+          <span className="detail__gallery-counter">
+            {index + 1} / {count}
+          </span>
+        </div>
+
+        <button
+          type="button"
+          className="detail__gallery-nav detail__gallery-nav--next"
+          aria-label="Next image"
+          onClick={goNext}
+        >
+          ›
+        </button>
+      </div>
     </div>
   );
 }

@@ -18,21 +18,20 @@ export function Hero() {
           </h1>
 
           <p className="hero__supporting">
-            I build in Unity and C#, working across gameplay programming,
-            mechanics, and level design. I&apos;m especially interested in the
-            decisions that connect a game&apos;s design to its implementation.
+            I use Unity and C# to build gameplay, shape levels, and prototype
+            the systems that connect the two.
           </p>
 
           <div className="hero__actions">
             <ScrollLink targetId="work" className="btn btn--primary">
-              View selected work
+              View projects
             </ScrollLink>
             <ScrollLink targetId="contact" className="btn btn--secondary">
-              Contact me
+              Get in touch
             </ScrollLink>
           </div>
 
-          <ul className="hero__stack" aria-label="Core technologies">
+          <ul className="hero__stack" aria-label="Core focus">
             <li>Unity</li>
             <li aria-hidden="true">·</li>
             <li>C#</li>
@@ -52,7 +51,7 @@ export function Hero() {
 }
 
 /**
- * A small, automatic "SYSTEM // COMBAT LOOP" visualization — a stylized
+ * A small, automatic "GAMEPLAY SYSTEMS // PROTOTYPE" visualization — a stylized
  * debug/prototype view of a simple gameplay loop:
  *
  *   IDLE → TARGETING → ATTACK → HIT → DAMAGE → DEFEATED → RESET
@@ -66,7 +65,7 @@ function CombatLoop() {
   return (
     <div className="loop">
       <div className="loop__frame">
-        <span className="loop__tag">system // combat loop</span>
+        <span className="loop__tag">gameplay systems // prototype</span>
         <span className="loop__status">
           <span className="loop__status-dot" />
           auto

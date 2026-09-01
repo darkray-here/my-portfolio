@@ -50,7 +50,7 @@ export function SelectedWork() {
           id="work"
           index="01"
           title="Selected Work"
-          subtitle="Published games, prototypes, and coursework that show how I approach gameplay, level design, and implementation."
+          subtitle="Mobile releases, coursework projects, and an unfinished concept showing my work across gameplay and level design."
         />
 
         <div className="projects">
@@ -64,7 +64,6 @@ export function SelectedWork() {
           ))}
         </div>
 
-        <p className="section__coming">Select a project to read the short breakdown.</p>
       </div>
 
       <ProjectDetail project={active} onClose={() => setActive(null)} />

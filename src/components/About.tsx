@@ -8,26 +8,23 @@ export function About() {
           id="about"
           index="02"
           title="About"
-          subtitle="The kind of work I want to keep getting better at."
+          subtitle="Design and implementation, working together."
         />
 
         <div className="about">
           <div className="about__intro">
             <p className="about__lead">
-              I&apos;m Mohammed Amaan Khan, a B.Tech Game Development student
-              who builds games and thinks about the systems behind them.
+              I&apos;m Mohammed Amaan Khan, a B.Tech. Game Development student
+              focused on gameplay programming and level design in Unity.
             </p>
             <p>
-              My work spans both sides of game development: implementing the
-              systems that make a game run and shaping the levels and mechanics
-              that make it readable and enjoyable to play. I have shipped
-              mobile projects and built smaller Unity projects to practice
-              spawning, animation states, UI, and gameplay logic.
+              I&apos;ve contributed to mobile releases and built coursework
+              projects involving platforming, spawning, animation states, UI,
+              terrain, and basic vehicle interaction.
             </p>
             <p>
-              I&apos;m working toward the design-and-programming intersection:
-              gameplay systems, mechanics, and the level decisions around them.
-              That is the direction I want to grow into through more deliberate
+              I&apos;m developing toward technical game design: making gameplay
+              systems and spaces work together clearly through deliberate
               prototyping and technical practice.
             </p>
           </div>
@@ -44,10 +41,6 @@ export function About() {
             <div className="fact">
               <span className="fact__label">Languages</span>
               <span className="fact__value">C#, learning C++</span>
-            </div>
-            <div className="fact">
-              <span className="fact__label">Direction</span>
-              <span className="fact__value">Technical game design</span>
             </div>
           </aside>
         </div>
