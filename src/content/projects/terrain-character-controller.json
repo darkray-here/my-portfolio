@@ -1,0 +1,34 @@
+{
+  "title": "Terrain Creation & Character Controller",
+  "shortDescription": "A coursework scene combining Unity Terrain design, imported character animation, and a basic drivable car interaction.",
+  "tagline": "Coursework · environment and character setup",
+  "category": "Coursework",
+  "categories": ["Coursework", "Technical / Systems", "Level Design"],
+  "status": "Completed",
+  "detailLevel": "supporting",
+  "engine": "Unity",
+  "language": "C#",
+  "platform": "PC",
+  "date": "October 2025",
+  "role": "Environment design & gameplay setup",
+  "order": 5,
+  "description": "A 3D coursework scene built around a designed terrain and town. It combines imported character animations with a basic car interaction that hides the player while driving.",
+  "contributions": [
+    "Designed the terrain, town, pond, paths, and foliage using Unity Terrain tools.",
+    "Imported the character model and animations from Mixamo.",
+    "Configured animation states and triggers for idle, running, jumping, and related states.",
+    "Implemented the basic enter, drive, and exit flow with AI assistance."
+  ],
+  "systems": [
+    "A character animation state machine with multiple movement states.",
+    "A basic car interaction that hides the character while driving; it does not include enter/exit animations."
+  ],
+  "technicalChallenges": [
+    "Debugged asset import problems, terrain fall-through, and issues in the car interaction."
+  ],
+  "whatILearned": [
+    "Terrain composition, asset integration, and animation state setup."
+  ],
+  "result": "Completed coursework project; not published.",
+  "technologies": ["Unity", "C#", "Mixamo", "Unity Terrain"]
+}

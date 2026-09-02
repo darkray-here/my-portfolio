@@ -1,0 +1,26 @@
+{
+  "title": "Flappy Bird",
+  "shortDescription": "A coursework flying game with a butterfly, moving plant obstacles, jump timing, collision detection, and off-screen cleanup.",
+  "tagline": "Coursework · fundamentals",
+  "category": "Coursework",
+  "categories": ["Coursework", "Game Development"],
+  "status": "Completed",
+  "detailLevel": "fundamentals",
+  "engine": "Unity",
+  "language": "C#",
+  "platform": "PC",
+  "date": "September–October 2025",
+  "role": "Gameplay developer",
+  "order": 4,
+  "description": "A coursework flying game in which a butterfly moves between carnivorous plant obstacles. The obstacles spawn ahead, move toward the player, and are removed after leaving the play area.",
+  "contributions": [
+    "Implemented obstacle generation, movement, and off-screen cleanup.",
+    "Set up the butterfly animation from sprite frames.",
+    "Implemented jumping, death, and collision behavior."
+  ],
+  "whatILearned": [
+    "Jump forces, collision detection, and basic Unity gameplay flow."
+  ],
+  "result": "Completed coursework project; not published.",
+  "technologies": ["Unity", "C#"]
+}

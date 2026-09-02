@@ -1,0 +1,27 @@
+{
+  "title": "Brick Breaker",
+  "shortDescription": "A one-level brick breaker built as coursework, focused on paddle movement, ball physics, collisions, and a win state.",
+  "tagline": "Coursework · fundamentals",
+  "category": "Coursework",
+  "categories": ["Coursework", "Game Development"],
+  "status": "Completed",
+  "detailLevel": "fundamentals",
+  "engine": "Unity",
+  "language": "C#",
+  "platform": "PC",
+  "date": "August–September 2025",
+  "role": "Gameplay developer",
+  "order": 3,
+  "description": "A single-level brick breaker built as college coursework. The round ends when the player clears the brick formation.",
+  "contributions": [
+    "Implemented paddle movement, screen bounds, ball physics, and brick destruction.",
+    "Placed the brick formation and built the win/end screen.",
+    "Added cleanup when the ball leaves the play area."
+  ],
+  "technicalChallenges": [
+    "Resolved an out-of-bounds ball lifecycle bug during debugging; the original fix was not documented."
+  ],
+  "whatILearned": ["Unity fundamentals and basic gameplay programming."],
+  "result": "Completed coursework project; not published.",
+  "technologies": ["Unity", "C#"]
+}

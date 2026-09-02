@@ -1,0 +1,59 @@
+{
+  "title": "Monkey Jump!",
+  "image": "MonkeyJump/cover.png",
+  "imageAlt": "Monkey Jump! cover art",
+  "gallery": [
+    { "src": "MonkeyJump/gameplay-1.png", "alt": "Monkey Jump! gameplay screenshot 1" },
+    { "src": "MonkeyJump/gameplay-2.png", "alt": "Monkey Jump! gameplay screenshot 2" },
+    { "src": "MonkeyJump/gameplay-3.png", "alt": "Monkey Jump! gameplay screenshot 3" },
+    { "src": "MonkeyJump/gameplay-4.png", "alt": "Monkey Jump! gameplay screenshot 4" },
+    { "src": "MonkeyJump/gameplay-5.png", "alt": "Monkey Jump! gameplay screenshot 5" },
+    { "src": "MonkeyJump/gameplay-6.png", "alt": "Monkey Jump! gameplay screenshot 6" },
+    { "src": "MonkeyJump/gameplay-7.png", "alt": "Monkey Jump! gameplay screenshot 7" }
+  ],
+  "shortDescription": "A 2D vertical platformer built around upward progression, environmental hazards, and the risk of falling back through earlier sections.",
+  "tagline": "Mobile release · vertical platforming",
+  "category": "Game Development",
+  "categories": ["Game Development", "Level Design", "Gameplay"],
+  "status": "Published",
+  "detailLevel": "featured",
+  "engine": "Unity",
+  "language": "C#",
+  "platform": "Mobile",
+  "date": "June 2025",
+  "role": "Level design, UI & gameplay systems",
+  "featured": true,
+  "order": 1,
+  "description": "A 2D platformer about climbing through a vertically stacked world. Falling sends the player back through lower sections, so platform placement and hazards shape both movement and risk.",
+  "contributions": [
+    "Designed and placed the platforms across the game's vertical levels.",
+    "Implemented an asteroid level and a snow level with distinct traversal behavior.",
+    "Created the falling animation, story, menus, controls, and gameplay UI.",
+    "Set up Cinemachine cinematics and prepared the project for mobile publishing."
+  ],
+  "systems": [
+    "Levels are stacked vertically in one scene, making a fall return the player to lower sections.",
+    "Snow platforms slow movement; sloped platforms and asteroid patterns change how each section is traversed.",
+    "The hold-to-jump-higher mechanic was implemented by a teammate."
+  ],
+  "designDecisions": [
+    "Built progression around upward movement while making a fall meaningful rather than a simple reset.",
+    "Used level-specific hazards to make later sections feel mechanically distinct."
+  ],
+  "technicalChallenges": [
+    "Resolved Unity export issues while the team was still learning the engine."
+  ],
+  "whatILearned": [
+    "How to structure and iterate on multi-level platforming spaces.",
+    "How to program level-specific mechanics and prepare a mobile build."
+  ],
+  "result": "Completed and published on Google Play.",
+  "technologies": ["Unity", "C#", "Cinemachine", "Mobile"],
+  "links": [
+    {
+      "kind": "store",
+      "label": "Google Play",
+      "url": "https://play.google.com/store/apps/details?id=com.SevenForgeStudios.MonkeyJump&hl=en_IN"
+    }
+  ]
+}

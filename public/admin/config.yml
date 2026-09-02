@@ -1,5 +1,7 @@
 backend:
-  name: test-repo
+  name: git-gateway
+
+local_backend: true
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -7,14 +9,69 @@ public_folder: "/uploads"
 collections:
   - name: projects
     label: Projects
+    label_singular: Project
     folder: "src/content/projects"
     create: true
+    extension: json
+    format: json
     slug: "{{slug}}"
+    identifier_field: title
     fields:
-      - label: Title
-        name: title
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Short Description, name: shortDescription, widget: text, required: true }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Tagline, name: tagline, widget: string, required: false }
+      - { label: Category, name: category, widget: string, required: true }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - label: Status
+        name: status
+        widget: select
+        required: false
+        options: ["Published", "Previously Published", "Completed", "In Progress", "Incomplete"]
+      - label: Detail Level
+        name: detailLevel
+        widget: select
+        required: false
+        options: ["featured", "supporting", "fundamentals", "concept"]
+      - { label: Engine, name: engine, widget: string, required: false }
+      - { label: Language, name: language, widget: string, required: false }
+      - { label: Platform, name: platform, widget: string, required: false }
+      - { label: Date, name: date, widget: string, required: false }
+      - { label: Role, name: role, widget: string, required: false }
+      - { label: Featured, name: featured, widget: boolean, required: false, default: false }
+      - { label: Order, name: order, widget: number, required: false, value_type: int }
+      - label: Cover Image
+        name: image
         widget: string
-
-      - label: Description
-        name: description
-        widget: text
+        required: false
+        hint: "Path relative to src/assets/, e.g. MonkeyJump/cover.png"
+      - { label: Cover Image Alt, name: imageAlt, widget: string, required: false }
+      - label: Gallery
+        name: gallery
+        widget: list
+        required: false
+        fields:
+          - label: Source
+            name: src
+            widget: string
+            hint: "Path relative to src/assets/, e.g. MonkeyJump/gameplay-1.png"
+          - { label: Alt Text, name: alt, widget: string }
+      - { label: Contributions, name: contributions, widget: list, required: false }
+      - { label: Systems & Mechanics, name: systems, widget: list, required: false }
+      - { label: Design Decisions, name: designDecisions, widget: list, required: false }
+      - { label: Technical Challenges, name: technicalChallenges, widget: list, required: false }
+      - { label: What I Learned, name: whatILearned, widget: list, required: false }
+      - { label: Result, name: result, widget: text, required: false }
+      - { label: Technologies, name: technologies, widget: list, required: false }
+      - label: Links
+        name: links
+        widget: list
+        required: false
+        fields:
+          - label: Kind
+            name: kind
+            widget: select
+            required: false
+            options: ["store", "github", "itch.io", "external"]
+          - { label: Label, name: label, widget: string }
+          - { label: URL, name: url, widget: string }

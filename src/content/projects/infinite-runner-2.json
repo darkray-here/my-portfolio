@@ -1,0 +1,28 @@
+{
+  "title": "Infinite Runner 2",
+  "shortDescription": "A coursework three-lane runner focused on lane changes, obstacle spawning, scoring, and a simple level-completion flow.",
+  "tagline": "Coursework · three-lane runner",
+  "category": "Coursework",
+  "categories": ["Coursework", "Game Development", "Level Design"],
+  "status": "Completed",
+  "detailLevel": "fundamentals",
+  "engine": "Unity",
+  "language": "C#",
+  "platform": "PC",
+  "date": "November 2025",
+  "role": "Gameplay developer",
+  "order": 6,
+  "description": "A three-lane runner built as college coursework. The player changes lanes to avoid randomly spawning hyena obstacles while a terrain-designed environment frames the route.",
+  "contributions": [
+    "Implemented platform and enemy spawning, lane changing, scoring, and the level-end condition.",
+    "Configured running and dying animation control.",
+    "Designed the side areas of the route with Unity Terrain tools."
+  ],
+  "systems": [
+    "Three-lane movement with randomly spawned obstacles.",
+    "A basic score and level-completion flow."
+  ],
+  "whatILearned": ["Runner fundamentals, spawning, and basic gameplay flow."],
+  "result": "Completed coursework project; not published.",
+  "technologies": ["Unity", "C#", "Unity Terrain"]
+}

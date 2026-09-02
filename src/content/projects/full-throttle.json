@@ -1,0 +1,46 @@
+{
+  "title": "Full Throttle",
+  "image": "FullThrottle/cover.png",
+  "imageAlt": "Full Throttle cover art",
+  "gallery": [
+    { "src": "FullThrottle/gameplay-1.png", "alt": "Full Throttle gameplay screenshot 1" },
+    { "src": "FullThrottle/gameplay-2.png", "alt": "Full Throttle gameplay screenshot 2" },
+    { "src": "FullThrottle/gameplay-3.png", "alt": "Full Throttle gameplay screenshot 3" },
+    { "src": "FullThrottle/gameplay-4.png", "alt": "Full Throttle gameplay screenshot 4" }
+  ],
+  "shortDescription": "A first-person mobile runner where the player dodges traffic anywhere across the road instead of switching between fixed lanes.",
+  "tagline": "Previously published · open-road runner",
+  "category": "Game Development",
+  "categories": ["Game Development", "Level Design", "Runner Systems"],
+  "status": "Previously Published",
+  "detailLevel": "supporting",
+  "engine": "Unity",
+  "language": "C#",
+  "platform": "Mobile",
+  "date": "July–August 2025",
+  "role": "Level design, spawning & UI",
+  "order": 2,
+  "description": "A first-person mobile runner set on a highway. The player can move across the full road while level segments move toward them to create the illusion of continuous forward travel.",
+  "contributions": [
+    "Designed the highway sections with buildings and roadside props.",
+    "Implemented the level spawning and deletion loop.",
+    "Designed and implemented the gameplay UI."
+  ],
+  "systems": [
+    "Moved level prefabs toward the player instead of building one enormous traversable road.",
+    "Used a non-lane-based road layout so traffic could be avoided across the full road width.",
+    "Tilt-to-move and tap-to-move controls were implemented by a teammate."
+  ],
+  "designDecisions": [
+    "Designed the road as an open space rather than a three-lane track, changing how players read and avoid traffic."
+  ],
+  "technicalChallenges": [
+    "Corrected unreliable level placement by iterating on the segment spawn positions."
+  ],
+  "whatILearned": [
+    "How level spawning and deletion can support a continuous runner environment.",
+    "How to design spaces and UI around an endless movement loop."
+  ],
+  "result": "Completed and previously published; the current store listing is unavailable after the original build was removed.",
+  "technologies": ["Unity", "C#", "Mobile"]
+}

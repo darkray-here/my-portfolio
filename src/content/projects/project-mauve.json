@@ -1,0 +1,37 @@
+{
+  "title": "Project Mauve",
+  "image": "ProjectMauve/Cover.png",
+  "imageAlt": "Project Mauve cover art",
+  "gallery": [
+    { "src": "ProjectMauve/Screenshot-1.png", "alt": "Project Mauve screenshot 1" },
+    { "src": "ProjectMauve/Screenshot-2.png", "alt": "Project Mauve screenshot 2" },
+    { "src": "ProjectMauve/Screenshot-3.png", "alt": "Project Mauve screenshot 3" },
+    { "src": "ProjectMauve/Screenshot-4.png", "alt": "Project Mauve screenshot 4" }
+  ],
+  "shortDescription": "An incomplete 2D top-down puzzle concept built around room-to-room exploration, environmental interaction, and personalized narrative clues.",
+  "tagline": "Personal concept · incomplete",
+  "category": "Concept",
+  "categories": ["Concept", "Game Design", "Level Design"],
+  "status": "Incomplete",
+  "detailLevel": "concept",
+  "engine": "Unity",
+  "platform": "Undecided",
+  "date": "December 2025",
+  "role": "Concept and level design",
+  "order": 7,
+  "description": "An incomplete 2D top-down puzzle concept structured around rooms, environmental interactions, and personalized narrative clues. The levels were planned with sprites, but the mechanics were not implemented.",
+  "contributions": [
+    "Created the character sprite and animation from a pixel-art template.",
+    "Designed the room layouts and puzzle structure with 2D sprites."
+  ],
+  "systems": [
+    "Planned object interactions that reveal short narrative messages.",
+    "Planned room-specific puzzles tied to the game's narrative."
+  ],
+  "designDecisions": [
+    "Designed a small puzzle experience where room layout and interactable props carry the narrative."
+  ],
+  "whatILearned": ["Aseprite and 2D level design."],
+  "result": "Incomplete concept; no mechanics or build were completed.",
+  "technologies": ["Unity", "Aseprite"]
+}
