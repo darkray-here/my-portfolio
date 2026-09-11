@@ -1,6 +1,10 @@
+import { Fragment } from "react";
 import { ScrollLink } from "./ScrollLink";
+import { siteSettings } from "../data/site";
 
 export function Hero() {
+  const { role, hero } = siteSettings;
+
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__bg" aria-hidden="true">
@@ -10,35 +14,31 @@ export function Hero() {
 
       <div className="hero__inner">
         <div className="hero__content">
-          <p className="hero__name">Mohammed Amaan Khan</p>
-          <p className="hero__eyebrow">Game Developer</p>
+          <p className="hero__name">{siteSettings.brand}</p>
+          <p className="hero__eyebrow">{role}</p>
 
           <h1 className="hero__title" id="hero-title">
-            Building games and designing the systems that make them work.
+            {hero.headline}
           </h1>
 
-          <p className="hero__supporting">
-            I use Unity and C# to build gameplay, shape levels, and prototype
-            the systems that connect the two.
-          </p>
+          <p className="hero__supporting">{hero.supporting}</p>
 
           <div className="hero__actions">
             <ScrollLink targetId="work" className="btn btn--primary">
-              View projects
+              {hero.primaryCtaLabel}
             </ScrollLink>
             <ScrollLink targetId="contact" className="btn btn--secondary">
-              Get in touch
+              {hero.secondaryCtaLabel}
             </ScrollLink>
           </div>
 
           <ul className="hero__stack" aria-label="Core focus">
-            <li>Unity</li>
-            <li aria-hidden="true">·</li>
-            <li>C#</li>
-            <li aria-hidden="true">·</li>
-            <li>Gameplay systems</li>
-            <li aria-hidden="true">·</li>
-            <li>Level design</li>
+            {hero.focus.map((item, i) => (
+              <Fragment key={item}>
+                {i > 0 ? <li aria-hidden="true">·</li> : null}
+                <li>{item}</li>
+              </Fragment>
+            ))}
           </ul>
         </div>
 

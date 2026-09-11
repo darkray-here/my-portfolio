@@ -1,12 +1,12 @@
 {
   "title": "Project Mauve",
-  "image": "ProjectMauve/Cover.png",
+  "image": "/uploads/ProjectMauve/Cover.png",
   "imageAlt": "Project Mauve cover art",
   "gallery": [
-    { "src": "ProjectMauve/Screenshot-1.png", "alt": "Project Mauve screenshot 1" },
-    { "src": "ProjectMauve/Screenshot-2.png", "alt": "Project Mauve screenshot 2" },
-    { "src": "ProjectMauve/Screenshot-3.png", "alt": "Project Mauve screenshot 3" },
-    { "src": "ProjectMauve/Screenshot-4.png", "alt": "Project Mauve screenshot 4" }
+    { "src": "/uploads/ProjectMauve/Screenshot-1.png", "alt": "Project Mauve screenshot 1" },
+    { "src": "/uploads/ProjectMauve/Screenshot-2.png", "alt": "Project Mauve screenshot 2" },
+    { "src": "/uploads/ProjectMauve/Screenshot-3.png", "alt": "Project Mauve screenshot 3" },
+    { "src": "/uploads/ProjectMauve/Screenshot-4.png", "alt": "Project Mauve screenshot 4" }
   ],
   "shortDescription": "An incomplete 2D top-down puzzle concept built around room-to-room exploration, environmental interaction, and personalized narrative clues.",
   "tagline": "Personal concept · incomplete",

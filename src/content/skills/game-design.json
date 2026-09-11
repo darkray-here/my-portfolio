@@ -1,0 +1,9 @@
+{
+  "title": "Game Design",
+  "order": 2,
+  "skills": [
+    { "name": "Level Design", "level": "Primary" },
+    { "name": "Mechanic Design", "level": "Familiar" },
+    { "name": "Environmental Design", "level": "Familiar" }
+  ]
+}

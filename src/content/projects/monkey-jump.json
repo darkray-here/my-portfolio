@@ -1,15 +1,15 @@
 {
   "title": "Monkey Jump!",
-  "image": "MonkeyJump/cover.png",
+  "image": "/uploads/MonkeyJump/cover.png",
   "imageAlt": "Monkey Jump! cover art",
   "gallery": [
-    { "src": "MonkeyJump/gameplay-1.png", "alt": "Monkey Jump! gameplay screenshot 1" },
-    { "src": "MonkeyJump/gameplay-2.png", "alt": "Monkey Jump! gameplay screenshot 2" },
-    { "src": "MonkeyJump/gameplay-3.png", "alt": "Monkey Jump! gameplay screenshot 3" },
-    { "src": "MonkeyJump/gameplay-4.png", "alt": "Monkey Jump! gameplay screenshot 4" },
-    { "src": "MonkeyJump/gameplay-5.png", "alt": "Monkey Jump! gameplay screenshot 5" },
-    { "src": "MonkeyJump/gameplay-6.png", "alt": "Monkey Jump! gameplay screenshot 6" },
-    { "src": "MonkeyJump/gameplay-7.png", "alt": "Monkey Jump! gameplay screenshot 7" }
+    { "src": "/uploads/MonkeyJump/gameplay-1.png", "alt": "Monkey Jump! gameplay screenshot 1" },
+    { "src": "/uploads/MonkeyJump/gameplay-2.png", "alt": "Monkey Jump! gameplay screenshot 2" },
+    { "src": "/uploads/MonkeyJump/gameplay-3.png", "alt": "Monkey Jump! gameplay screenshot 3" },
+    { "src": "/uploads/MonkeyJump/gameplay-4.png", "alt": "Monkey Jump! gameplay screenshot 4" },
+    { "src": "/uploads/MonkeyJump/gameplay-5.png", "alt": "Monkey Jump! gameplay screenshot 5" },
+    { "src": "/uploads/MonkeyJump/gameplay-6.png", "alt": "Monkey Jump! gameplay screenshot 6" },
+    { "src": "/uploads/MonkeyJump/gameplay-7.png", "alt": "Monkey Jump! gameplay screenshot 7" }
   ],
   "shortDescription": "A 2D vertical platformer built around upward progression, environmental hazards, and the risk of falling back through earlier sections.",
   "tagline": "Mobile release · vertical platforming",

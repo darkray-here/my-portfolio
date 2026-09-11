@@ -42,19 +42,17 @@ collections:
       - { label: Order, name: order, widget: number, required: false, value_type: int }
       - label: Cover Image
         name: image
-        widget: string
+        widget: image
         required: false
-        hint: "Path relative to src/assets/, e.g. MonkeyJump/cover.png"
       - { label: Cover Image Alt, name: imageAlt, widget: string, required: false }
       - label: Gallery
         name: gallery
         widget: list
         required: false
         fields:
-          - label: Source
+          - label: Image
             name: src
-            widget: string
-            hint: "Path relative to src/assets/, e.g. MonkeyJump/gameplay-1.png"
+            widget: image
           - { label: Alt Text, name: alt, widget: string }
       - { label: Contributions, name: contributions, widget: list, required: false }
       - { label: Systems & Mechanics, name: systems, widget: list, required: false }
@@ -75,3 +73,163 @@ collections:
             options: ["store", "github", "itch.io", "external"]
           - { label: Label, name: label, widget: string }
           - { label: URL, name: url, widget: string }
+
+  - name: experience
+    label: Experience
+    label_singular: Experience Entry
+    folder: "src/content/experience"
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: role
+    fields:
+      - { label: Role, name: role, widget: string, required: true }
+      - { label: Organization, name: organization, widget: string, required: true }
+      - { label: Context, name: context, widget: string, required: false }
+      - { label: Current, name: current, widget: boolean, required: false, default: false }
+      - { label: Start Date, name: startDate, widget: string, required: false }
+      - { label: End Date, name: endDate, widget: string, required: false }
+      - { label: Points, name: points, widget: list, required: false }
+      - { label: Order, name: order, widget: number, required: false, value_type: int }
+
+  - name: education
+    label: Education
+    label_singular: Education Entry
+    folder: "src/content/education"
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: degree
+    fields:
+      - { label: Degree, name: degree, widget: string, required: true }
+      - { label: Field, name: field, widget: string, required: true }
+      - { label: Specialization, name: specialization, widget: string, required: false }
+      - { label: Institution, name: institution, widget: string, required: false }
+      - { label: Status, name: status, widget: string, required: false }
+      - { label: Current, name: current, widget: boolean, required: false, default: false }
+      - { label: Order, name: order, widget: number, required: false, value_type: int }
+
+  - name: skills
+    label: Skills
+    label_singular: Skill Group
+    folder: "src/content/skills"
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: Group Title, name: title, widget: string, required: true }
+      - label: Skills
+        name: skills
+        widget: list
+        required: false
+        fields:
+          - { label: Name, name: name, widget: string }
+          - label: Level
+            name: level
+            widget: select
+            required: false
+            options: ["Primary", "Familiar", "Learning"]
+      - { label: Order, name: order, widget: number, required: false, value_type: int }
+
+  - name: about
+    label: About
+    files:
+      - label: About Content
+        name: about
+        file: "src/content/site/about.json"
+        fields:
+          - { label: Lead, name: lead, widget: text, required: true }
+          - { label: Paragraphs, name: paragraphs, widget: list, required: false }
+          - label: Facts
+            name: facts
+            widget: list
+            required: false
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Value, name: value, widget: string }
+
+  - name: contact
+    label: Contact
+    files:
+      - label: Contact Content
+        name: contact
+        file: "src/content/site/contact.json"
+        fields:
+          - { label: Headline, name: headline, widget: text, required: true }
+          - { label: Muted Line, name: mutedLine, widget: string, required: false }
+          - label: Links
+            name: links
+            widget: list
+            required: false
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+              - { label: Value, name: value, widget: string }
+
+  - name: site
+    label: Site Settings
+    files:
+      - label: Site Settings
+        name: settings
+        file: "src/content/site/settings.json"
+        fields:
+          - { label: Brand, name: brand, widget: string, required: true }
+          - { label: Role, name: role, widget: string, required: true }
+          - { label: Footer Role, name: footerRole, widget: string, required: false }
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: text, required: true }
+              - { label: Supporting, name: supporting, widget: text, required: true }
+              - { label: Focus, name: focus, widget: list, required: false }
+              - { label: Primary CTA Label, name: primaryCtaLabel, widget: string, required: true }
+              - { label: Secondary CTA Label, name: secondaryCtaLabel, widget: string, required: true }
+          - label: Sections
+            name: sections
+            widget: object
+            fields:
+              - label: Work
+                name: work
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string, required: true }
+                  - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - label: About
+                name: about
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string, required: true }
+                  - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - label: Experience
+                name: experience
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string, required: true }
+                  - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - label: Skills
+                name: skills
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string, required: true }
+                  - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - label: Contact
+                name: contact
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string, required: true }
+                  - { label: Subtitle, name: subtitle, widget: string, required: false }
+          - label: SEO
+            name: seo
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Author, name: author, widget: string, required: false }
+          - { label: Profile Image, name: profileImage, widget: image, required: false }
+          - { label: Resume, name: resume, widget: file, required: false }

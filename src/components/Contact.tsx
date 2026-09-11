@@ -1,9 +1,10 @@
 import { SectionHeading } from "./SectionHeading";
-import { contactLinks } from "../data/contact";
+import { contactContent } from "../data/contact";
+import { siteSettings } from "../data/site";
 
 export function Contact() {
   // Only show destinations that actually have a URL set.
-  const available = contactLinks.filter((link) => link.url.length > 0);
+  const available = contactContent.links.filter((link) => link.url.length > 0);
 
   return (
     <section className="section section--contact" id="contact">
@@ -11,20 +12,16 @@ export function Contact() {
         <SectionHeading
           id="contact"
           index="05"
-          title="Contact"
-          subtitle="Open to internships, junior gameplay roles, and focused collaborations."
+          title={siteSettings.sections.contact.title}
+          subtitle={siteSettings.sections.contact.subtitle}
         />
 
         <div className="contact">
           <div className="contact__lead">
-            <p className="contact__line">
-              I&apos;m open to game-development internships, junior
-              gameplay-programming roles, and focused collaborations on game
-              projects.
-            </p>
-            {available.length > 0 ? (
+            <p className="contact__line">{contactContent.headline}</p>
+            {available.length > 0 && contactContent.mutedLine ? (
               <p className="contact__line contact__line--muted">
-                Reach me through any of the links below.
+                {contactContent.mutedLine}
               </p>
             ) : null}
           </div>

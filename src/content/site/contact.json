@@ -1,0 +1,10 @@
+{
+  "headline": "I'm open to game-development internships, junior gameplay-programming roles, and focused collaborations on game projects.",
+  "mutedLine": "Reach me through any of the links below.",
+  "links": [
+    { "id": "github", "label": "GitHub", "url": "", "value": "" },
+    { "id": "linkedin", "label": "LinkedIn", "url": "", "value": "" },
+    { "id": "itch", "label": "itch.io", "url": "", "value": "" },
+    { "id": "email", "label": "Email", "url": "", "value": "" }
+  ]
+}

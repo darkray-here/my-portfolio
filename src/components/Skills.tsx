@@ -1,5 +1,6 @@
 import { SectionHeading } from "./SectionHeading";
 import { skillGroups } from "../data/skills";
+import { siteSettings } from "../data/site";
 
 export function Skills() {
   return (
@@ -8,8 +9,8 @@ export function Skills() {
         <SectionHeading
           id="skills"
           index="04"
-          title="Skills"
-          subtitle="Skills demonstrated across the projects above."
+          title={siteSettings.sections.skills.title}
+          subtitle={siteSettings.sections.skills.subtitle}
         />
 
         <div className="skills">

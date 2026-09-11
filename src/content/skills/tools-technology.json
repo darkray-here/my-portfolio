@@ -1,0 +1,12 @@
+{
+  "title": "Tools / Technology",
+  "order": 4,
+  "skills": [
+    { "name": "Unity Terrain Tools", "level": "Familiar" },
+    { "name": "Cinemachine", "level": "Familiar" },
+    { "name": "Mixamo", "level": "Familiar" },
+    { "name": "Aseprite", "level": "Learning" },
+    { "name": "Git & GitHub", "level": "Familiar" },
+    { "name": "C++", "level": "Learning" }
+  ]
+}

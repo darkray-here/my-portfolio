@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ScrollLink } from "./ScrollLink";
+import { siteSettings } from "../data/site";
 
 const NAV_LINKS = [
   { id: "work", label: "Work" },
@@ -28,7 +29,7 @@ export function Navbar() {
           className="nav__brand"
           onNavigate={() => setMenuOpen(false)}
         >
-          Mohammed Amaan Khan
+          {siteSettings.brand}
         </ScrollLink>
 
         <nav className="nav__links" aria-label="Primary">

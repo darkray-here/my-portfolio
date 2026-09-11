@@ -1,0 +1,12 @@
+{
+  "lead": "I'm Mohammed Amaan Khan, a B.Tech. Game Development student focused on gameplay programming and level design in Unity.",
+  "paragraphs": [
+    "I've contributed to mobile releases and built coursework projects involving platforming, spawning, animation states, UI, terrain, and basic vehicle interaction.",
+    "I'm developing toward technical game design: making gameplay systems and spaces work together clearly through deliberate prototyping and technical practice."
+  ],
+  "facts": [
+    { "label": "Focus", "value": "Gameplay, systems & level design" },
+    { "label": "Engine", "value": "Unity" },
+    { "label": "Languages", "value": "C#, learning C++" }
+  ]
+}

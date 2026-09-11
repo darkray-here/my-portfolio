@@ -1,5 +1,6 @@
 import { SectionHeading } from "./SectionHeading";
 import { experience, education } from "../data/experience";
+import { siteSettings } from "../data/site";
 
 export function Experience() {
   return (
@@ -8,8 +9,8 @@ export function Experience() {
         <SectionHeading
           id="experience"
           index="03"
-          title="Experience & Education"
-          subtitle="Experience, education, and current focus."
+          title={siteSettings.sections.experience.title}
+          subtitle={siteSettings.sections.experience.subtitle}
         />
 
         <div className="timeline">

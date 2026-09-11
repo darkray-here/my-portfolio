@@ -1,12 +1,12 @@
 {
   "title": "Full Throttle",
-  "image": "FullThrottle/cover.png",
+  "image": "/uploads/FullThrottle/cover.png",
   "imageAlt": "Full Throttle cover art",
   "gallery": [
-    { "src": "FullThrottle/gameplay-1.png", "alt": "Full Throttle gameplay screenshot 1" },
-    { "src": "FullThrottle/gameplay-2.png", "alt": "Full Throttle gameplay screenshot 2" },
-    { "src": "FullThrottle/gameplay-3.png", "alt": "Full Throttle gameplay screenshot 3" },
-    { "src": "FullThrottle/gameplay-4.png", "alt": "Full Throttle gameplay screenshot 4" }
+    { "src": "/uploads/FullThrottle/gameplay-1.png", "alt": "Full Throttle gameplay screenshot 1" },
+    { "src": "/uploads/FullThrottle/gameplay-2.png", "alt": "Full Throttle gameplay screenshot 2" },
+    { "src": "/uploads/FullThrottle/gameplay-3.png", "alt": "Full Throttle gameplay screenshot 3" },
+    { "src": "/uploads/FullThrottle/gameplay-4.png", "alt": "Full Throttle gameplay screenshot 4" }
   ],
   "shortDescription": "A first-person mobile runner where the player dodges traffic anywhere across the road instead of switching between fixed lanes.",
   "tagline": "Previously published · open-road runner",

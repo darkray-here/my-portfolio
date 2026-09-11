@@ -3,60 +3,47 @@ import type {
   ProjectGalleryImage,
   ProjectLink,
 } from "../types/project";
+import {
+  asEnum,
+  asString,
+  asStringArray,
+  basename,
+  unwrap,
+} from "./helpers";
 
 /**
- * Portfolio projects are now stored as one JSON file per project under
+ * Portfolio projects are stored as one JSON file per project under
  * `src/content/projects/`. This module globs those files at build time and
  * normalizes them into the `Project` shape the UI already consumes.
  *
- * Image and gallery paths inside the content files are relative to
- * `src/assets/` and are resolved here to bundled asset URLs so Vite still
- * hashes and copies them in production builds.
+ * Image and gallery paths are public URLs (e.g. "/uploads/MonkeyJump/cover.png")
+ * served from the `public/` folder, so they work identically in dev and
+ * production and can be produced directly by the Decap CMS media library.
  */
 
 const contentModules = import.meta.glob("../content/projects/*.json", {
   eager: true,
-}) as Record<string, { default: Record<string, unknown> }>;
+});
 
-const assetModules = import.meta.glob(
-  [
-    "../assets/**/*.png",
-    "../assets/**/*.jpg",
-    "../assets/**/*.jpeg",
-    "../assets/**/*.gif",
-    "../assets/**/*.webp",
-    "../assets/**/*.svg",
-  ],
-  {
-    eager: true,
-    query: "?url",
-    import: "default",
-  },
-) as Record<string, string>;
+const PROJECT_STATUSES = [
+  "Published",
+  "Previously Published",
+  "Completed",
+  "In Progress",
+  "Incomplete",
+] as const;
 
-function resolveAsset(relativePath: string): string {
-  return assetModules[`../assets/${relativePath}`] ?? "";
-}
+const PROJECT_DETAIL_LEVELS = [
+  "featured",
+  "supporting",
+  "fundamentals",
+  "concept",
+] as const;
 
-function basename(path: string): string {
-  const parts = path.split("/");
-  const file = parts[parts.length - 1] ?? path;
-  const dot = file.lastIndexOf(".");
-  return dot === -1 ? file : file.slice(0, dot);
-}
-
-function asString(value: unknown): string | undefined {
-  return typeof value === "string" ? value : undefined;
-}
-
-function asStringArray(value: unknown): string[] | undefined {
-  if (!Array.isArray(value)) return undefined;
-  return value.filter((v): v is string => typeof v === "string");
-}
+const PROJECT_LINK_KINDS = ["store", "github", "itch.io", "external"] as const;
 
 function buildProject(id: string, raw: Record<string, unknown>): Project {
-  const rawImage = asString(raw.image);
-  const image = rawImage ? resolveAsset(rawImage) || undefined : undefined;
+  const image = asString(raw.image);
 
   const gallery = raw.gallery as
     | { src?: unknown; alt?: unknown }[]
@@ -74,8 +61,8 @@ function buildProject(id: string, raw: Record<string, unknown>): Project {
     tagline: asString(raw.tagline),
     category: asString(raw.category) ?? "",
     categories: asStringArray(raw.categories),
-    status: asString(raw.status) as Project["status"],
-    detailLevel: asString(raw.detailLevel) as Project["detailLevel"],
+    status: asEnum(raw.status, PROJECT_STATUSES),
+    detailLevel: asEnum(raw.detailLevel, PROJECT_DETAIL_LEVELS),
     engine: asString(raw.engine),
     language: asString(raw.language),
     platform: asString(raw.platform),
@@ -87,7 +74,7 @@ function buildProject(id: string, raw: Record<string, unknown>): Project {
     imageAlt: asString(raw.imageAlt),
     gallery: gallery?.map(
       (g): ProjectGalleryImage => ({
-        src: typeof g.src === "string" ? resolveAsset(g.src) : "",
+        src: typeof g.src === "string" ? g.src : "",
         alt: typeof g.alt === "string" ? g.alt : "",
       }),
     ),
@@ -102,10 +89,7 @@ function buildProject(id: string, raw: Record<string, unknown>): Project {
       ?.filter((l) => typeof l.url === "string")
       .map(
         (l): ProjectLink => ({
-          kind:
-            typeof l.kind === "string"
-              ? (l.kind as ProjectLink["kind"])
-              : "external",
+          kind: asEnum(l.kind, PROJECT_LINK_KINDS) ?? "external",
           label: typeof l.label === "string" ? l.label : "",
           url: l.url as string,
         }),
@@ -114,7 +98,7 @@ function buildProject(id: string, raw: Record<string, unknown>): Project {
 }
 
 const projectEntries = Object.entries(contentModules).map(([path, mod]) =>
-  buildProject(basename(path), mod.default),
+  buildProject(basename(path), unwrap(mod)),
 );
 
 export const projects: Project[] = projectEntries;

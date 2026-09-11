@@ -3,6 +3,7 @@ import { SectionHeading } from "./SectionHeading";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectDetail } from "./ProjectDetail";
 import { projects } from "../data/projects";
+import { siteSettings } from "../data/site";
 import type { Project } from "../types/project";
 
 /**
@@ -49,8 +50,8 @@ export function SelectedWork() {
         <SectionHeading
           id="work"
           index="01"
-          title="Selected Work"
-          subtitle="Mobile releases, coursework projects, and an unfinished concept showing my work across gameplay and level design."
+          title={siteSettings.sections.work.title}
+          subtitle={siteSettings.sections.work.subtitle}
         />
 
         <div className="projects">

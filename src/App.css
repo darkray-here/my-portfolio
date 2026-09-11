@@ -1714,6 +1714,20 @@ a.project:focus-visible,
   color: var(--color-text-secondary);
 }
 
+.about__portrait {
+  display: block;
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 1.2rem;
+}
+
+.about__resume {
+  margin-top: 0.6rem;
+}
+
 .about__intro p {
   margin: 0 0 1rem;
 }

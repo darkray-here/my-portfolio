@@ -1,0 +1,10 @@
+{
+  "title": "Gameplay / Systems",
+  "order": 3,
+  "skills": [
+    { "name": "Spawning Systems", "level": "Familiar" },
+    { "name": "Animation State Systems", "level": "Familiar" },
+    { "name": "Collision / Physics", "level": "Familiar" },
+    { "name": "Gameplay Logic", "level": "Familiar" }
+  ]
+}

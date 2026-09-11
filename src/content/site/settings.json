@@ -1,0 +1,41 @@
+{
+  "brand": "Mohammed Amaan Khan",
+  "role": "Game Developer",
+  "footerRole": "Gameplay systems · level design",
+  "hero": {
+    "headline": "Building games and designing the systems that make them work.",
+    "supporting": "I use Unity and C# to build gameplay, shape levels, and prototype the systems that connect the two.",
+    "focus": ["Unity", "C#", "Gameplay systems", "Level design"],
+    "primaryCtaLabel": "View projects",
+    "secondaryCtaLabel": "Get in touch"
+  },
+  "sections": {
+    "work": {
+      "title": "Selected Work",
+      "subtitle": "Mobile releases, coursework projects, and an unfinished concept showing my work across gameplay and level design."
+    },
+    "about": {
+      "title": "About",
+      "subtitle": "Design and implementation, working together."
+    },
+    "experience": {
+      "title": "Experience & Education",
+      "subtitle": "Experience, education, and current focus."
+    },
+    "skills": {
+      "title": "Skills",
+      "subtitle": "Skills demonstrated across the projects above."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Open to internships, junior gameplay roles, and focused collaborations."
+    }
+  },
+  "seo": {
+    "title": "Mohammed Amaan Khan — Game Developer",
+    "description": "Mohammed Amaan Khan is a game developer using Unity and C# to build gameplay, shape levels, and prototype gameplay systems.",
+    "author": "Mohammed Amaan Khan"
+  },
+  "profileImage": "",
+  "resume": ""
+}

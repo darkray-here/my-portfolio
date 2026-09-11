@@ -1,59 +1,29 @@
-/**
- * Skill familiarity level. These labels describe the evidence represented in
- * this portfolio, not a formal proficiency score.
- */
-export type SkillLevel = "Primary" | "Learning" | "Familiar";
+import type { SkillGroup } from "../types/content";
+import { asString, folderEntries } from "./helpers";
 
-export type Skill = {
-  name: string;
-  level?: SkillLevel;
-};
+const modules = import.meta.glob("../content/skills/*.json", {
+  eager: true,
+});
 
-export type SkillGroup = {
-  title: string;
-  skills: Skill[];
-};
+function toSkillGroup(
+  raw: Record<string, unknown>,
+): SkillGroup {
+  const skills = (raw.skills as { name?: unknown; level?: unknown }[] | undefined)
+    ?.filter((s) => typeof s.name === "string")
+    .map((s) => ({
+      name: s.name as string,
+      level: typeof s.level === "string"
+        ? (s.level as SkillGroup["skills"][number]["level"])
+        : undefined,
+    }));
 
-/**
- * Skills are grounded in the actual project work — only technologies
- * and disciplines with evidence from the portfolio are listed.
- */
-export const skillGroups: SkillGroup[] = [
-  {
-    title: "Game Development",
-    skills: [
-      { name: "Unity", level: "Primary" },
-      { name: "C#", level: "Primary" },
-      { name: "Gameplay Programming", level: "Primary" },
-      { name: "UI Implementation", level: "Familiar" },
-    ],
-  },
-  {
-    title: "Game Design",
-    skills: [
-      { name: "Level Design", level: "Primary" },
-      { name: "Mechanic Design", level: "Familiar" },
-      { name: "Environmental Design", level: "Familiar" },
-    ],
-  },
-  {
-    title: "Gameplay / Systems",
-    skills: [
-      { name: "Spawning Systems", level: "Familiar" },
-      { name: "Animation State Systems", level: "Familiar" },
-      { name: "Collision / Physics", level: "Familiar" },
-      { name: "Gameplay Logic", level: "Familiar" },
-    ],
-  },
-  {
-    title: "Tools / Technology",
-    skills: [
-      { name: "Unity Terrain Tools", level: "Familiar" },
-      { name: "Cinemachine", level: "Familiar" },
-      { name: "Mixamo", level: "Familiar" },
-      { name: "Aseprite", level: "Learning" },
-      { name: "Git & GitHub", level: "Familiar" },
-      { name: "C++", level: "Learning" },
-    ],
-  },
-];
+  return {
+    title: asString(raw.title) ?? "",
+    skills: skills ?? [],
+    order: typeof raw.order === "number" ? raw.order : undefined,
+  };
+}
+
+export const skillGroups: SkillGroup[] = folderEntries(modules)
+  .map(({ raw }) => toSkillGroup(raw))
+  .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
