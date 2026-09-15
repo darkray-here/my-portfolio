@@ -1,5 +1,5 @@
 {
-  "shortDescription": "A 2D vertical platformer built around upward progression, environmental hazards, and the risk of falling back through earlier sections. [CMS Test]",
+  "shortDescription": "A 2D vertical platformer built around upward progression, environmental hazards, and the risk of falling back through earlier sections.",
   "engine": "Unity",
   "contributions": [
     "Designed and placed the platforms across the game's vertical levels.",
