@@ -14,7 +14,7 @@ My broader direction is **Technical Game Design** — the space where design int
 
 ## Portfolio
 
-**Live Portfolio:** [https://your-portfolio-domain.com](https://your-portfolio-domain.com)
+**Live Portfolio:** [darkrayportfolio.mooo.com](https://darkrayportfolio.mooo.com/)
 
 <!-- Update the URL above if the domain ever changes. This is the only place the live URL is stored. -->
 
@@ -127,15 +127,3 @@ npm run lint    # run ESLint
 ```
 
 The dev server also serves the CMS at `/admin`. Local CMS editing requires OAuth configuration and will not work against `localhost` without additional setup — editing the JSON content files directly is the normal local workflow.
-
-## Editing This README
-
-This file is plain GitHub-flavoured Markdown, so it can be edited directly on GitHub:
-
-**[Edit README.md](https://github.com/darkray-here/my-portfolio/edit/main/README.md)**
-
-Sections are independent — you can update the live portfolio link, the feature list, or the tech stack table without touching the rest of the document.
-
-## Contact
-
-Contact links are managed in `src/content/site/contact.json` and appear in the Contact section of the live site.
