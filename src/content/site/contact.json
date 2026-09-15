@@ -1,10 +1,30 @@
 {
-  "headline": "I'm open to game-development internships, junior gameplay-programming roles, and focused collaborations on game projects.",
+  "headline": "I'm open to Unity Game Developer Roles, Game Designer Roles, Game Programming Roles",
   "mutedLine": "Reach me through any of the links below.",
   "links": [
-    { "id": "github", "label": "GitHub", "url": "", "value": "" },
-    { "id": "linkedin", "label": "LinkedIn", "url": "", "value": "" },
-    { "id": "itch", "label": "itch.io", "url": "", "value": "" },
-    { "id": "email", "label": "Email", "url": "", "value": "" }
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/darkray-here",
+      "value": "My GitHub"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mohammed-amaan-khan-109800210/",
+      "value": "My LinkedIn"
+    },
+    {
+      "id": "itch",
+      "label": "itch.io",
+      "url": "https://therealdarkray.itch.io/",
+      "value": "My Itch.io"
+    },
+    {
+      "id": "email",
+      "label": "Gmail",
+      "url": "mailto:amaanazam2@gmail.com",
+      "value": "My Email"
+    }
   ]
 }
