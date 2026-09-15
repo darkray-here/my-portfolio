@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
-
-local_backend: true
+  name: github
+  repo: darkray-here/my-portfolio
+  branch: main
+  base_url: https://darkrayoauth.mooo.com
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
