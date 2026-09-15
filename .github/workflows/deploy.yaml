@@ -18,13 +18,15 @@ jobs:
     steps:
       - name: Configure SSH
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          SSH_PRIVATE_KEY_B64: ${{ secrets.DEPLOY_SSH_KEY_B64 }}
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/portfolio_deploy
+          printf '%s' "$SSH_PRIVATE_KEY_B64" | base64 --decode > ~/.ssh/portfolio_deploy
           chmod 600 ~/.ssh/portfolio_deploy
+
+          ssh-keygen -y -f ~/.ssh/portfolio_deploy > /dev/null
 
           ssh-keyscan -H 80.225.213.78 >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
@@ -36,25 +38,16 @@ jobs:
             -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=yes \
             ubuntu@80.225.213.78 \
-            'bash -s' <<'REMOTE'
-              set -euo pipefail
-
-              cd /opt/homelab/portfolio
-
-              echo "== Sync repository =="
-              git fetch origin main
-              git reset --hard origin/main
-
-              echo "== Build portfolio =="
-              docker run --rm \
-                -v /opt/homelab/portfolio:/app \
-                -w /app \
-                node:24-bookworm \
-                bash -lc "npm ci && npm run build"
-
-              echo "== Deployed commit =="
-              git rev-parse --short HEAD
-            REMOTE
+            "cd /opt/homelab/portfolio && \
+             git fetch origin main && \
+             git reset --hard origin/main && \
+             docker run --rm \
+               -v /opt/homelab/portfolio:/app \
+               -w /app \
+               node:24-bookworm \
+               bash -lc 'npm ci && npm run build' && \
+             echo '== Deployed commit ==' && \
+             git rev-parse --short HEAD"
 
       - name: Cleanup SSH key
         if: always()
