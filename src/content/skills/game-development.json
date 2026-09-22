@@ -11,15 +11,15 @@
       "level": "Primary"
     },
     {
-      "name": "UI / HUD Implementation",
-      "level": "Familiar"
-    },
-    {
       "name": "Prototyping",
       "level": "Primary"
     },
     {
       "name": "Performance Optimization",
+      "level": "Familiar"
+    },
+    {
+      "name": "UI / HUD Implementation",
       "level": "Familiar"
     }
   ]
