@@ -3,15 +3,11 @@
   "order": 1,
   "skills": [
     {
-      "name": "Unity Engine 6",
+      "name": "Game Systems Development",
       "level": "Primary"
     },
     {
-      "name": "Gameplay Programming (C#)",
-      "level": "Primary"
-    },
-    {
-      "name": "Player/Character Controllers",
+      "name": "Player & Character Controllers",
       "level": "Primary"
     },
     {
@@ -21,6 +17,10 @@
     {
       "name": "Prototyping",
       "level": "Primary"
+    },
+    {
+      "name": "Performance Optimization",
+      "level": "Familiar"
     }
   ]
 }
