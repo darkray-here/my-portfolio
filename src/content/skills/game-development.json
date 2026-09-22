@@ -2,9 +2,25 @@
   "title": "Game Development",
   "order": 1,
   "skills": [
-    { "name": "Unity", "level": "Primary" },
-    { "name": "C#", "level": "Primary" },
-    { "name": "Gameplay Programming", "level": "Primary" },
-    { "name": "UI Implementation", "level": "Familiar" }
+    {
+      "name": "Unity Engine 6",
+      "level": "Primary"
+    },
+    {
+      "name": "Gameplay Programming (C#)",
+      "level": "Primary"
+    },
+    {
+      "name": "Player/Character Controllers",
+      "level": "Primary"
+    },
+    {
+      "name": "UI / HUD Implementation",
+      "level": "Familiar"
+    },
+    {
+      "name": "Prototyping",
+      "level": "Primary"
+    }
   ]
 }
