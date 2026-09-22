@@ -6,12 +6,9 @@
   "context": "Conducted UX and systems deconstruction on 5 competing titles to establish baseline mechanics for a new prototype, Architected the foundational game systems including progression scaling power-up mechanics and economy balancing. Prototyped the spatial pacing, onboarding flow, and mid-game difficulty curve for the first 10 levels.",
   "order": 1,
   "points": [
-    "Implemented and tuned core Faucet/Sink economy systems directly in Unity",
-    "driving tier-based upgrade costs (scaling to 704 by tier 15) and reward multipliers (including 1.5x completion bonuses) off data-driven parameters to support a consistent progression curve.Built the onboarding flow and level layouts for the first 10 levels in the Unity Editor",
-    "structuring spatial pacing and mid-game difficulty curves for a seamless tutorial ramp-up.",
-    "Reverse-engineered mechanics and systems from 5 competing titles",
-    "documenting findings in a technical Game Design Document (GDD) that informed implementation priorities.",
-    "Worked cross-functionally with an external art team",
-    "specifying environment asset requirements and tracking stage-by-stage integration into the Unity project."
+    "Implemented and tuned core Faucet/Sink economy systems directly in Unity driving tier-based upgrade costs (scaling to 704 by tier 15) and reward multipliers (including 1.5x completion bonuses) off data-driven parameters to support a consistent progression curve.",
+    "Built the onboarding flow and level layouts for the first 10 levels in the Unity Editor structuring spatial pacing and mid-game difficulty curves for a seamless tutorial ramp-up.",
+    "Reverse-engineered mechanics and systems from 5 competing titles documenting findings in a technical Game Design Document (GDD) that informed implementation priorities.",
+    "Worked cross-functionally with an external art team specifying environment asset requirements and tracking stage-by-stage integration into the Unity project."
   ]
 }
