@@ -1,6 +1,9 @@
 {
-  "degree": "B.Tech. (Game Development)",
+  "degree": "Bachelor of Technology (B.Tech.)",
   "field": "Computer Engineering",
   "specialization": "Specialization in Game Technology",
-  "order": 1
+  "order": 1,
+  "institution": "Poornima University",
+  "current": true,
+  "status": "Final Year"
 }
