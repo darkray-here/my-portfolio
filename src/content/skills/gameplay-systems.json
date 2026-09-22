@@ -1,10 +1,26 @@
 {
-  "title": "Gameplay / Systems",
+  "title": "Gameplay & Systems",
   "order": 3,
   "skills": [
-    { "name": "Spawning Systems", "level": "Familiar" },
-    { "name": "Animation State Systems", "level": "Familiar" },
-    { "name": "Collision / Physics", "level": "Familiar" },
-    { "name": "Gameplay Logic", "level": "Familiar" }
+    {
+      "name": "Gameplay Logic",
+      "level": "Primary"
+    },
+    {
+      "name": "Collision / Physics Systems",
+      "level": "Primary"
+    },
+    {
+      "name": "Animation State Machines",
+      "level": "Primary"
+    },
+    {
+      "name": "Enemy Spawning Systems",
+      "level": "Primary"
+    },
+    {
+      "name": "Procedural Generation",
+      "level": "Familiar"
+    }
   ]
 }
