@@ -1,0 +1,13 @@
+{
+  "role": "Unity Game Developer - Intern",
+  "organization": "DataMonk",
+  "current": false,
+  "order": 1,
+  "startDate": "July 2025",
+  "endDate": "October 2025",
+  "context": "Implemented core gameplay systems and player progression logic in Unity using C#, applying object-oriented programming principles and iterative debugging to deliver stable, playable builds for 2D and 3D games deployed on Google Play Store.",
+  "points": [
+    "Collaborated with designers and artists using Git to integrate • gameplay systems • UI components • assets into production-ready builds.",
+    "Debugged refactored and optimized gameplay code to improve performance and runtime stability."
+  ]
+}
