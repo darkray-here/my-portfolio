@@ -1,12 +1,26 @@
 {
-  "title": "Tools / Technology",
+  "title": "Tools & Technology",
   "order": 4,
   "skills": [
-    { "name": "Unity Terrain Tools", "level": "Familiar" },
-    { "name": "Cinemachine", "level": "Familiar" },
-    { "name": "Mixamo", "level": "Familiar" },
-    { "name": "Aseprite", "level": "Learning" },
-    { "name": "Git & GitHub", "level": "Familiar" },
-    { "name": "C++", "level": "Learning" }
+    {
+      "name": "Unity",
+      "level": "Primary"
+    },
+    {
+      "name": "C#",
+      "level": "Primary"
+    },
+    {
+      "name": "Git & GitHub",
+      "level": "Primary"
+    },
+    {
+      "name": "Notion & MS Office",
+      "level": "Primary"
+    },
+    {
+      "name": "Blender",
+      "level": "Familiar"
+    }
   ]
 }
