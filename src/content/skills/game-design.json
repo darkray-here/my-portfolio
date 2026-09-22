@@ -2,8 +2,25 @@
   "title": "Game Design",
   "order": 2,
   "skills": [
-    { "name": "Level Design", "level": "Primary" },
-    { "name": "Mechanic Design", "level": "Familiar" },
-    { "name": "Environmental Design", "level": "Familiar" }
+    {
+      "name": "Game Mechanics Design",
+      "level": "Primary"
+    },
+    {
+      "name": "Level Design",
+      "level": "Primary"
+    },
+    {
+      "name": "Game Economy",
+      "level": "Familiar"
+    },
+    {
+      "name": "UX / UI Design",
+      "level": "Primary"
+    },
+    {
+      "name": "Difficulty Balancing",
+      "level": "Primary"
+    }
   ]
 }
